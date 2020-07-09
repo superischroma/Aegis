@@ -1,6 +1,6 @@
 package me.superischroma.aegis.command;
 
-import me.superischroma.aegis.User;
+import me.superischroma.aegis.user.User;
 import org.bukkit.entity.Player;
 
 @CommandParameters(description = "Modify the plugin root.", usage = "/<command> <add <player> | remove <player>>", root = true)

@@ -151,9 +151,12 @@ public class AegisItem
     }
 
     public void onBlockInteract(PlayerInteractEvent e) {}
+    public void onItemInteract(PlayerInteractEvent e) {}
 
     public static boolean isValid(ItemStack stack, AegisItemType type)
     {
+        if (stack == null)
+            return false;
         if (!stack.hasItemMeta())
             return false;
         if (!stack.getItemMeta().hasLore())
@@ -162,5 +165,35 @@ public class AegisItem
         if (!stack.getItemMeta().getLore().contains(mark))
             return false;
         return stack.getItemMeta().getDisplayName().contains(type.newInstance().getRawName());
+    }
+
+    public static double getHealthOffItem(ItemStack stack)
+    {
+        for (AegisItemType type : AegisItemType.values())
+        {
+            if (isValid(stack, type))
+            {
+                AegisItem item = type.newInstance();
+                if (!(item instanceof Armor))
+                    continue;
+                return ((Armor) item).getHealth();
+            }
+        }
+        return 0.0;
+    }
+
+    public static int getDefenseOffItem(ItemStack stack)
+    {
+        for (AegisItemType type : AegisItemType.values())
+        {
+            if (isValid(stack, type))
+            {
+                AegisItem item = type.newInstance();
+                if (!(item instanceof Armor))
+                    continue;
+                return ((Armor) item).getDefense();
+            }
+        }
+        return 0;
     }
 }

@@ -3,6 +3,7 @@ package me.superischroma.aegis.gui;
 public enum GUIType
 {
     CRUSHER(CrusherGUI.class),
+    HUB_BLOCK(HubGUI.class),
     MERGER(MergerGUI.class),
     REINFORCER(ReinforcerGUI.class);
 

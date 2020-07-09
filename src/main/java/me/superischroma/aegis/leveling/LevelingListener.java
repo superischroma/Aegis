@@ -1,7 +1,7 @@
 package me.superischroma.aegis.leveling;
 
 import lombok.Getter;
-import me.superischroma.aegis.User;
+import me.superischroma.aegis.user.User;
 import me.superischroma.aegis.service.AegisService;
 import org.bukkit.ChatColor;
 import org.bukkit.GameMode;

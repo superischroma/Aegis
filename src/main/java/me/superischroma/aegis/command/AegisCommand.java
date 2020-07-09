@@ -1,7 +1,7 @@
 package me.superischroma.aegis.command;
 
 import me.superischroma.aegis.Aegis;
-import me.superischroma.aegis.User;
+import me.superischroma.aegis.user.User;
 import me.superischroma.aegis.rank.Rank;
 import me.superischroma.aegis.util.AUtil;
 import org.apache.commons.lang.StringUtils;

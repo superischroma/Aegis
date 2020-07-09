@@ -5,5 +5,6 @@ public enum ItemType
     MELEE,
     TOOLS,
     RANGED,
+    ARMOR,
     NONE
 }

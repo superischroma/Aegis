@@ -1,6 +1,6 @@
 package me.superischroma.aegis.command;
 
-import me.superischroma.aegis.User;
+import me.superischroma.aegis.user.User;
 import me.superischroma.aegis.config.ConfigEntry;
 import me.superischroma.aegis.rank.Rank;
 import org.bukkit.Bukkit;

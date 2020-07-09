@@ -1,12 +1,14 @@
 package me.superischroma.aegis.item;
 
 import me.superischroma.aegis.service.AegisService;
+import me.superischroma.aegis.util.AUtil;
 import org.bukkit.GameMode;
 import org.bukkit.Location;
 import org.bukkit.Material;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.block.*;
 import org.bukkit.event.player.PlayerInteractEvent;
+import org.bukkit.inventory.ItemStack;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -77,6 +79,22 @@ public class AegisBlockHandler extends AegisService
     @EventHandler
     public void onPlayerInteract(PlayerInteractEvent e)
     {
+        ItemStack stack = e.getItem();
+        if ((e.getAction() == Action.RIGHT_CLICK_BLOCK ||
+            e.getAction() == Action.RIGHT_CLICK_AIR) &&
+            !AUtil.isStackAir(stack))
+        {
+            for (AegisItemType type : AegisItemType.values())
+            {
+                if (AegisItem.isValid(stack, type))
+                {
+                    AegisItem item = type.newInstance();
+                    if (item == null)
+                        continue;
+                    item.onItemInteract(e);
+                }
+            }
+        }
         if (e.getAction() != Action.RIGHT_CLICK_BLOCK)
             return;
         if (e.getClickedBlock() == null)

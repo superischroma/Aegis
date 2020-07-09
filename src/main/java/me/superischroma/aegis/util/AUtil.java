@@ -417,6 +417,7 @@ public class AUtil
             case MELEE: return Groups.MELEE_VARIANTS.get(new Random().nextInt(Groups.MELEE_VARIANTS.size() - 1));
             case TOOLS: return Groups.TOOLS_VARIANTS.get(new Random().nextInt(Groups.TOOLS_VARIANTS.size() - 1));
             case RANGED: return Groups.RANGED_VARIANTS.get(new Random().nextInt(Groups.RANGED_VARIANTS.size() - 1));
+            case ARMOR: return Groups.ARMOR_VARIANTS.get(new Random().nextInt(Groups.ARMOR_VARIANTS.size() - 1));
         }
         return null;
     }

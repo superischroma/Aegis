@@ -1,13 +1,6 @@
 package me.superischroma.aegis.command;
 
-import me.superischroma.aegis.User;
-import me.superischroma.aegis.item.AegisItem;
-import me.superischroma.aegis.item.AegisItemType;
-import org.bukkit.ChatColor;
-import org.bukkit.inventory.PlayerInventory;
-
-import java.util.ArrayList;
-import java.util.List;
+import me.superischroma.aegis.user.User;
 
 @CommandParameters(description = "Reload the plugin's config files.", aliases = "asavec")
 public class Command_asaveconfig extends AegisCommand

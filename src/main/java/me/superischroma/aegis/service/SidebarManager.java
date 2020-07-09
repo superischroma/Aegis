@@ -1,6 +1,6 @@
 package me.superischroma.aegis.service;
 
-import me.superischroma.aegis.User;
+import me.superischroma.aegis.user.User;
 import me.superischroma.aegis.config.ConfigEntry;
 import me.superischroma.aegis.sidebar.Sidebar;
 import me.superischroma.aegis.util.AUtil;

@@ -10,6 +10,7 @@ import me.superischroma.aegis.leveling.LevelingListener;
 import me.superischroma.aegis.mob.AegisMobManager;
 import me.superischroma.aegis.rank.RankManager;
 import me.superischroma.aegis.service.*;
+import me.superischroma.aegis.user.PlayerUserHandler;
 import me.superischroma.aegis.util.ALog;
 import me.superischroma.aegis.util.ATranslator;
 import org.bukkit.plugin.PluginDescriptionFile;
@@ -51,6 +52,8 @@ public final class Aegis extends JavaPlugin
     public FuseBowListener fbl;
     public ButterflyBootsListener bbl;
     public LevelingListener ll;
+    public ActionBarManager abm;
+    public PlayerUserHandler puh;
 
     @Override
     public void onEnable()
@@ -115,6 +118,8 @@ public final class Aegis extends JavaPlugin
         fbl = new FuseBowListener();
         bbl = new ButterflyBootsListener();
         ll = new LevelingListener();
+        abm = new ActionBarManager();
+        puh = new PlayerUserHandler();
         ALog.info("Started " + ash.getServiceAmount() + " service(s).");
     }
 }

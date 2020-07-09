@@ -1,7 +1,9 @@
-package me.superischroma.aegis;
+package me.superischroma.aegis.user;
 
 import lombok.Getter;
 import lombok.Setter;
+import me.superischroma.aegis.Aegis;
+import me.superischroma.aegis.item.AegisItem;
 import me.superischroma.aegis.leveling.AegisLevel;
 import me.superischroma.aegis.rank.Rank;
 import me.superischroma.aegis.util.ALog;
@@ -10,6 +12,7 @@ import net.md_5.bungee.api.chat.TextComponent;
 import org.bukkit.Bukkit;
 import org.bukkit.Sound;
 import org.bukkit.entity.Player;
+import org.bukkit.inventory.PlayerInventory;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -17,6 +20,8 @@ import java.util.List;
 public class User
 {
     private static Aegis plugin = Aegis.getPlugin();
+    private static final double BASE_HEALTH = 100.0;
+    private static final int BASE_DEFENSE = 50;
 
     @Getter
     private String name;
@@ -128,6 +133,32 @@ public class User
         if (!isPlayer())
             return;
         getPlayer().playSound(getPlayer().getLocation(), sound, 1F, 1F);
+    }
+
+    public double getMaxHealth()
+    {
+        if (!isPlayer())
+            return 0.0;
+        double finalHealth = BASE_HEALTH;
+        PlayerInventory inv = getPlayer().getInventory();
+        finalHealth += AegisItem.getHealthOffItem(inv.getHelmet());
+        finalHealth += AegisItem.getHealthOffItem(inv.getChestplate());
+        finalHealth += AegisItem.getHealthOffItem(inv.getLeggings());
+        finalHealth += AegisItem.getHealthOffItem(inv.getBoots());
+        return finalHealth;
+    }
+
+    public double getDefense()
+    {
+        if (!isPlayer())
+            return 0.0;
+        int finalHealth = BASE_DEFENSE;
+        PlayerInventory inv = getPlayer().getInventory();
+        finalHealth += AegisItem.getDefenseOffItem(inv.getHelmet());
+        finalHealth += AegisItem.getDefenseOffItem(inv.getChestplate());
+        finalHealth += AegisItem.getDefenseOffItem(inv.getLeggings());
+        finalHealth += AegisItem.getDefenseOffItem(inv.getBoots());
+        return finalHealth;
     }
 
     public static User getUser(Player player)

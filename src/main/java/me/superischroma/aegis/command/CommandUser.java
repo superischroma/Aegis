@@ -1,7 +1,7 @@
 package me.superischroma.aegis.command;
 
 import lombok.Getter;
-import me.superischroma.aegis.User;
+import me.superischroma.aegis.user.User;
 import org.bukkit.command.CommandSender;
 import org.bukkit.entity.Player;
 

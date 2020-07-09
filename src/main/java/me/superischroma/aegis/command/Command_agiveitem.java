@@ -1,6 +1,6 @@
 package me.superischroma.aegis.command;
 
-import me.superischroma.aegis.User;
+import me.superischroma.aegis.user.User;
 import me.superischroma.aegis.item.AegisItem;
 import me.superischroma.aegis.item.AegisItemType;
 import org.bukkit.ChatColor;

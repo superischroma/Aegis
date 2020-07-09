@@ -1,6 +1,6 @@
 package me.superischroma.aegis.service;
 
-import me.superischroma.aegis.User;
+import me.superischroma.aegis.user.User;
 import me.superischroma.aegis.rank.Rank;
 import org.bukkit.ChatColor;
 import org.bukkit.event.EventHandler;

@@ -1,6 +1,6 @@
 package me.superischroma.aegis.command;
 
-import me.superischroma.aegis.User;
+import me.superischroma.aegis.user.User;
 import me.superischroma.aegis.mob.AegisMob;
 import me.superischroma.aegis.mob.AegisMobType;
 

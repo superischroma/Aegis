@@ -10,4 +10,5 @@ public class Groups
     public static final List<Variant> MELEE_VARIANTS = Arrays.asList();
     public static final List<Variant> TOOLS_VARIANTS = Arrays.asList();
     public static final List<Variant> RANGED_VARIANTS = Arrays.asList();
+    public static final List<Variant> ARMOR_VARIANTS = Arrays.asList();
 }

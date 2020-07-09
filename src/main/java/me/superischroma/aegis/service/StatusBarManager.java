@@ -1,6 +1,6 @@
 package me.superischroma.aegis.service;
 
-import me.superischroma.aegis.User;
+import me.superischroma.aegis.user.User;
 import me.superischroma.aegis.config.ConfigEntry;
 import org.bukkit.ChatColor;
 import org.bukkit.scheduler.BukkitRunnable;

@@ -1,6 +1,6 @@
 package me.superischroma.aegis.command;
 
-import me.superischroma.aegis.User;
+import me.superischroma.aegis.user.User;
 import me.superischroma.aegis.rank.Rank;
 
 @CommandParameters(description = "Kills all Aegis mobs.", rank = Rank.BRUH)

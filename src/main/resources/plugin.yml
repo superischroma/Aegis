@@ -1,0 +1,6 @@
+name: Aegis
+version: ${project.version}
+main: me.superischroma.aegis.Aegis
+api-version: 1.13
+authors: [super]
+description: This plugin is powered by the extremely stable and high-level API known as RockMod, it will give your server a 99999999999% performance boost and will reduce your ping by a lot. No extra plugins are required to activate RockMod, it's included in the plugin!

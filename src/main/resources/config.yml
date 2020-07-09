@@ -1,0 +1,20 @@
+#
+# Aegis - Config
+#
+
+# Boot / Shutdown
+boot: 'Enabled %plugin.fullName%'
+shutdown: 'Disabled %plugin.fullName%'
+
+# Real Time
+real_time:
+  enabled: false
+  world: 'world'
+
+# MOTD
+motd:
+  # Your generic MOTD
+  message: '&c%plugin.name%'
+  # Randomizer (chooses a random MOTD from the list below, overrides generic MOTD)
+  randomize: false
+  messages: []

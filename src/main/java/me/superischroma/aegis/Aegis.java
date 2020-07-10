@@ -4,7 +4,7 @@ import me.superischroma.aegis.command.*;
 import me.superischroma.aegis.config.Config;
 import me.superischroma.aegis.config.ConfigEntry;
 import me.superischroma.aegis.gui.GUIHandler;
-import me.superischroma.aegis.item.AegisBlockHandler;
+import me.superischroma.aegis.item.AegisItemHandler;
 import me.superischroma.aegis.item.CustomCrafting;
 import me.superischroma.aegis.leveling.LevelingListener;
 import me.superischroma.aegis.mob.AegisMobManager;
@@ -48,7 +48,7 @@ public final class Aegis extends JavaPlugin
     public ServerPingListener spl;
     public CustomCrafting cc;
     public GUIHandler gh;
-    public AegisBlockHandler abh;
+    public AegisItemHandler aih;
     public FuseBowListener fbl;
     public ButterflyBootsListener bbl;
     public LevelingListener ll;
@@ -114,7 +114,7 @@ public final class Aegis extends JavaPlugin
         spl = new ServerPingListener();
         cc = new CustomCrafting();
         gh = new GUIHandler();
-        abh = new AegisBlockHandler();
+        aih = new AegisItemHandler();
         fbl = new FuseBowListener();
         bbl = new ButterflyBootsListener();
         ll = new LevelingListener();

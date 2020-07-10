@@ -10,7 +10,6 @@ import org.bukkit.block.Biome;
 import org.bukkit.enchantments.Enchantment;
 import org.bukkit.entity.Player;
 import org.bukkit.inventory.ItemStack;
-import org.bukkit.inventory.meta.ItemMeta;
 
 import java.text.NumberFormat;
 import java.text.SimpleDateFormat;
@@ -20,7 +19,7 @@ import java.util.regex.Pattern;
 
 public class AUtil
 {
-    private static ItemStack blank = createNamedStack(Material.GRAY_STAINED_GLASS_PANE, ChatColor.DARK_GRAY + "");
+    private static ItemStack blank = createNamedStack(Material.BLACK_STAINED_GLASS_PANE, ChatColor.DARK_GRAY + "");
     private static SimpleDateFormat DAY_FORMAT = new SimpleDateFormat("MM/dd/yy");
     private static SimpleDateFormat TIME_FORMAT = new SimpleDateFormat("hh:mm aa");
     private static NumberFormat COMMA_FORMAT = NumberFormat.getInstance();
@@ -381,6 +380,51 @@ public class AUtil
         }
     }
 
+    public static Enchantment getEnchantFromString(String string)
+    {
+        switch (string)
+        {
+            case "Aqua Affinity": return Enchantment.WATER_WORKER;
+            case "Bane of Arthropods": return Enchantment.DAMAGE_ARTHROPODS;
+            case "Curse of Binding": return Enchantment.BINDING_CURSE;
+            case "Blast Protection": return Enchantment.PROTECTION_EXPLOSIONS;
+            case "Channeling": return Enchantment.CHANNELING;
+            case "Depth Strider": return Enchantment.DEPTH_STRIDER;
+            case "Efficiency": return Enchantment.DIG_SPEED;
+            case "Feather Falling": return Enchantment.PROTECTION_FALL;
+            case "Fire Aspect": return Enchantment.FIRE_ASPECT;
+            case "Fire Protection": return Enchantment.PROTECTION_FIRE;
+            case "Flame": return Enchantment.ARROW_FIRE;
+            case "Fortune": return Enchantment.LOOT_BONUS_BLOCKS;
+            case "Frost Walker": return Enchantment.FROST_WALKER;
+            case "Impaling": return Enchantment.IMPALING;
+            case "Infinity": return Enchantment.ARROW_INFINITE;
+            case "Knockback": return Enchantment.KNOCKBACK;
+            case "Looting": return Enchantment.LOOT_BONUS_MOBS;
+            case "Loyalty": return Enchantment.LOYALTY;
+            case "Luck of the Sea": return Enchantment.LUCK;
+            case "Lure": return Enchantment.LURE;
+            case "Mending": return Enchantment.MENDING;
+            case "Multishot": return Enchantment.MULTISHOT;
+            case "Piercing": return Enchantment.PIERCING;
+            case "Power": return Enchantment.ARROW_DAMAGE;
+            case "Projectile Protection": return Enchantment.PROTECTION_PROJECTILE;
+            case "Protection": return Enchantment.PROTECTION_ENVIRONMENTAL;
+            case "Punch": return Enchantment.ARROW_KNOCKBACK;
+            case "Quick Charge": return Enchantment.QUICK_CHARGE;
+            case "Respiration": return Enchantment.OXYGEN;
+            case "Riptide": return Enchantment.RIPTIDE;
+            case "Sharpness": return Enchantment.DAMAGE_ALL;
+            case "Silk Touch": return Enchantment.SILK_TOUCH;
+            case "Smite": return Enchantment.DAMAGE_UNDEAD;
+            case "Sweeping Edge": return Enchantment.SWEEPING_EDGE;
+            case "Thorns": return Enchantment.THORNS;
+            case "Unbreaking": return Enchantment.DURABILITY;
+            case "Curse of Vanishing": return Enchantment.VANISHING_CURSE;
+            default: return null;
+        }
+    }
+
     public static ItemStack getBlank()
     {
         return blank;
@@ -414,10 +458,10 @@ public class AUtil
     {
         switch (type)
         {
-            case MELEE: return Groups.MELEE_VARIANTS.get(new Random().nextInt(Groups.MELEE_VARIANTS.size() - 1));
-            case TOOLS: return Groups.TOOLS_VARIANTS.get(new Random().nextInt(Groups.TOOLS_VARIANTS.size() - 1));
-            case RANGED: return Groups.RANGED_VARIANTS.get(new Random().nextInt(Groups.RANGED_VARIANTS.size() - 1));
-            case ARMOR: return Groups.ARMOR_VARIANTS.get(new Random().nextInt(Groups.ARMOR_VARIANTS.size() - 1));
+            case MELEE: return Groups.MELEE_VARIANTS.get(new Random().nextInt(Groups.MELEE_VARIANTS.size() - 1)).newInstance();
+            case TOOLS: return Groups.TOOLS_VARIANTS.get(new Random().nextInt(Groups.TOOLS_VARIANTS.size() - 1)).newInstance();
+            case RANGED: return Groups.RANGED_VARIANTS.get(new Random().nextInt(Groups.RANGED_VARIANTS.size() - 1)).newInstance();
+            case ARMOR: return Groups.ARMOR_VARIANTS.get(new Random().nextInt(Groups.ARMOR_VARIANTS.size() - 1)).newInstance();
         }
         return null;
     }

@@ -2,8 +2,10 @@ package me.superischroma.aegis.gui;
 
 public enum GUIType
 {
+    ADMIN(AdminGUI.class),
     CRUSHER(CrusherGUI.class),
-    HUB_BLOCK(HubGUI.class),
+    ENCHANTER(EnchanterGUI.class),
+    HUB(HubGUI.class),
     MERGER(MergerGUI.class),
     REINFORCER(ReinforcerGUI.class);
 

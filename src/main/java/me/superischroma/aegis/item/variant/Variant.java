@@ -31,4 +31,17 @@ public class Variant
     {
         attributes.add(new CompactAttribute(attr, amount));
     }
+
+    public static Variant getByName(String name)
+    {
+        for (VariantType type : VariantType.values())
+        {
+            Variant variant = type.newInstance();
+            if (variant == null)
+                continue;
+            if (variant.getName().equals(name))
+                return variant;
+        }
+        return null;
+    }
 }

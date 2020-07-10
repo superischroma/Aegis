@@ -1,8 +1,6 @@
 package me.superischroma.aegis.gui;
 
-import me.superischroma.aegis.item.AegisItem;
-import me.superischroma.aegis.item.AegisItemType;
-import me.superischroma.aegis.item.ReinforcerStone;
+import me.superischroma.aegis.item.*;
 import me.superischroma.aegis.util.AUtil;
 import me.superischroma.aegis.util.ModifyableItemStack;
 import org.bukkit.ChatColor;
@@ -20,8 +18,6 @@ import java.util.List;
 
 public class ReinforcerGUI extends GUI
 {
-    private static List<AegisItemType> reinforceable = Arrays.asList(AegisItemType.FUSE_BOW, AegisItemType.BUTTERFLY_BOOTS);
-
     public ReinforcerGUI()
     {
         super("Reinforcer", 27);
@@ -50,22 +46,9 @@ public class ReinforcerGUI extends GUI
                 player.sendMessage(ChatColor.RED + "No item to reinforce!");
                 return;
             }
-            boolean able = false;
-            for (AegisItemType type : reinforceable)
-            {
-                if (AegisItem.isValid(toReinforce, type))
-                {
-                    able = true;
-                }
-            }
-            if (!able)
+            if (AegisItem.from(toReinforce).getType() == ItemType.NONE)
             {
                 player.sendMessage(ChatColor.RED + "This item cannot be reinforced!");
-                return;
-            }
-            if (toReinforce.getName().contains("Reinforced"))
-            {
-                player.sendMessage(ChatColor.RED + "That item is already reinforced!");
                 return;
             }
             PlayerInventory pinv = player.getInventory();
@@ -82,19 +65,10 @@ public class ReinforcerGUI extends GUI
                 player.sendMessage(ChatColor.RED + "You don't have any reinforcer stones!");
                 return;
             }
-            ModifyableItemStack reinforced = ModifyableItemStack.from(toReinforce.clone());
-            String name = reinforced.getName();
-            ChatColor color = ChatColor.WHITE;
-            if (name.startsWith("§"))
-            {
-                color = ChatColor.getByChar(name.substring(1, 2));
-            }
             stone.setAmount(stone.getAmount() - 1);
-            reinforced.setName(color + "Reinforced " + reinforced.getName());
-            reinforced.addAttribute(Attribute.GENERIC_MOVEMENT_SPEED, 0.1);
-            reinforced.addAttribute(Attribute.GENERIC_ATTACK_DAMAGE, 0.5);
-            reinforced.apply();
-            inv.setItem(11, reinforced);
+            AegisInstanceItem aii = AegisInstanceItem.from(toReinforce);
+            aii.setVariant(AUtil.getRandomVariant(aii.getItem().getType()));
+            inv.setItem(11, aii.create());
             player.playSound(player.getLocation(), Sound.BLOCK_ANVIL_USE, 1.0F, 1.0F);
         }
     }

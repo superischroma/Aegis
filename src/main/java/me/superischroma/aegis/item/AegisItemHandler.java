@@ -1,10 +1,13 @@
 package me.superischroma.aegis.item;
 
+import me.superischroma.aegis.gui.EnchanterGUI;
 import me.superischroma.aegis.service.AegisService;
 import me.superischroma.aegis.util.AUtil;
 import org.bukkit.GameMode;
 import org.bukkit.Location;
 import org.bukkit.Material;
+import org.bukkit.block.Block;
+import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.block.*;
 import org.bukkit.event.player.PlayerInteractEvent;
@@ -13,7 +16,7 @@ import org.bukkit.inventory.ItemStack;
 import java.util.ArrayList;
 import java.util.List;
 
-public class AegisBlockHandler extends AegisService
+public class AegisItemHandler extends AegisService
 {
     @Override
     public void start()
@@ -99,10 +102,12 @@ public class AegisBlockHandler extends AegisService
             return;
         if (e.getClickedBlock() == null)
             return;
+        Player player = e.getPlayer();
+        Block block = e.getClickedBlock();
         for (String key : plugin.blocks.getKeys(false))
         {
             List<Location> locations = (List<Location>) plugin.blocks.getList(key);
-            if (locations.contains(e.getClickedBlock().getLocation()))
+            if (locations.contains(block.getLocation()))
             {
                 AegisItem item = AegisItemType.findType(key).newInstance();
                 if (item == null)
@@ -111,7 +116,7 @@ public class AegisBlockHandler extends AegisService
                 if (item.hasGUI())
                 {
                     e.setCancelled(true);
-                    item.getGUI().open(e.getPlayer());
+                    item.getGUI().open(player);
                 }
                 return;
             }

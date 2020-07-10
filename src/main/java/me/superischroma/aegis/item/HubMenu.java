@@ -1,14 +1,15 @@
 package me.superischroma.aegis.item;
 
 import me.superischroma.aegis.gui.HubGUI;
+import org.bukkit.ChatColor;
 import org.bukkit.Material;
 import org.bukkit.event.player.PlayerInteractEvent;
 
-public class HubStar extends AegisItem
+public class HubMenu extends AegisItem
 {
-    public HubStar()
+    public HubMenu()
     {
-        super("Hub Star", Material.NETHER_STAR, Rarity.COMMON);
+        super("Hub Menu " + ChatColor.GRAY + "(Right Click)", Material.NETHER_STAR, Rarity.COMMON);
         super.glow();
         super.applyMetaToStack();
     }

@@ -4,7 +4,9 @@ import lombok.Getter;
 import lombok.Setter;
 import me.superischroma.aegis.gui.GUI;
 import me.superischroma.aegis.item.variant.Variant;
+import me.superischroma.aegis.item.variant.VariantType;
 import me.superischroma.aegis.util.AUtil;
+import org.apache.commons.lang.StringUtils;
 import org.bukkit.ChatColor;
 import org.bukkit.Material;
 import org.bukkit.attribute.Attribute;
@@ -16,6 +18,7 @@ import org.bukkit.inventory.ItemStack;
 import org.bukkit.inventory.meta.ItemMeta;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 
 public class AegisItem
@@ -36,11 +39,17 @@ public class AegisItem
     @Getter
     private String rawName;
 
+    // enchantable?
+    @Getter
+    private boolean enchantable;
+
     // enchantment color
+    @Getter
     @Setter
     private ChatColor enchantmentColor;
 
     // rarity
+    @Getter
     private Rarity rarity;
 
     // gui
@@ -50,6 +59,7 @@ public class AegisItem
     private Recipe recipe;
 
     // type
+    @Getter
     private ItemType type;
 
     public AegisItem(String name, Material type, Rarity rarity, ItemType itemType)
@@ -61,6 +71,7 @@ public class AegisItem
         this.meta = stack.getItemMeta();
         this.lore = new ArrayList<>();
         this.rawName = name;
+        this.enchantable = false;
         this.setName(rarity.getColor() + name);
         this.meta.addItemFlags(ItemFlag.HIDE_ATTRIBUTES);
         this.meta.addItemFlags(ItemFlag.HIDE_ENCHANTS);
@@ -100,10 +111,14 @@ public class AegisItem
         addAttribute(attr, amount, AttributeModifier.Operation.ADD_NUMBER);
     }
 
-    public void addEnchant(Enchantment enchantment, int level)
+    public void enchantable()
     {
-        addLoreLine(enchantmentColor + AUtil.getStringEnchant(enchantment) + " " + level);
-        meta.addEnchant(enchantment, level, true);
+        this.enchantable = true;
+        lore.remove(rarity.getName());
+        lore.remove(mark);
+        lore.add(enchantmentColor + "No Enchantments");
+        lore.add(rarity.getName());
+        lore.add(mark);
     }
 
     public void glow()
@@ -113,9 +128,12 @@ public class AegisItem
 
     public void addLoreLine(String s)
     {
+        lore.remove(enchantmentColor + "No Enchantments");
         lore.remove(rarity.getName());
         lore.remove(mark);
         lore.add(AUtil.colorize(s));
+        if (enchantable)
+            lore.add(enchantmentColor + "No Enchantments");
         lore.add(rarity.getName());
         lore.add(mark);
     }
@@ -164,7 +182,28 @@ public class AegisItem
         if (!stack.getItemMeta().hasDisplayName())
         if (!stack.getItemMeta().getLore().contains(mark))
             return false;
-        return stack.getItemMeta().getDisplayName().contains(type.newInstance().getRawName());
+        String name = stack.getItemMeta().getDisplayName();
+        for (VariantType vtype : VariantType.values())
+        {
+            if (ChatColor.stripColor(name).startsWith(vtype.newInstance().getName()))
+            {
+                List<String> spl = new ArrayList<>(Arrays.asList(name.split(" ")));
+                spl.remove(0);
+                name = StringUtils.join(spl, " ");
+            }
+        }
+        return name.contains(type.newInstance().getRawName());
+    }
+
+    public static AegisItem from(ItemStack stack)
+    {
+        AegisItem item = null;
+        for (AegisItemType type : AegisItemType.values())
+        {
+            if (isValid(stack, type))
+                item = type.newInstance();
+        }
+        return item;
     }
 
     public static double getHealthOffItem(ItemStack stack)
@@ -195,5 +234,10 @@ public class AegisItem
             }
         }
         return 0;
+    }
+
+    public static String getMark()
+    {
+        return mark;
     }
 }

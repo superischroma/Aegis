@@ -4,6 +4,7 @@ import lombok.Getter;
 import lombok.Setter;
 import me.superischroma.aegis.Aegis;
 import me.superischroma.aegis.item.AegisItem;
+import me.superischroma.aegis.item.ArmorSet;
 import me.superischroma.aegis.leveling.AegisLevel;
 import me.superischroma.aegis.rank.Rank;
 import me.superischroma.aegis.util.ALog;
@@ -145,6 +146,8 @@ public class User
         finalHealth += AegisItem.getHealthOffItem(inv.getChestplate());
         finalHealth += AegisItem.getHealthOffItem(inv.getLeggings());
         finalHealth += AegisItem.getHealthOffItem(inv.getBoots());
+        if (ArmorSet.GODS.hasFullSetEquipped(inv))
+            finalHealth += 100;
         return finalHealth;
     }
 
@@ -152,13 +155,15 @@ public class User
     {
         if (!isPlayer())
             return 0.0;
-        int finalHealth = BASE_DEFENSE;
+        int finalDefense = BASE_DEFENSE;
         PlayerInventory inv = getPlayer().getInventory();
-        finalHealth += AegisItem.getDefenseOffItem(inv.getHelmet());
-        finalHealth += AegisItem.getDefenseOffItem(inv.getChestplate());
-        finalHealth += AegisItem.getDefenseOffItem(inv.getLeggings());
-        finalHealth += AegisItem.getDefenseOffItem(inv.getBoots());
-        return finalHealth;
+        finalDefense += AegisItem.getDefenseOffItem(inv.getHelmet());
+        finalDefense += AegisItem.getDefenseOffItem(inv.getChestplate());
+        finalDefense += AegisItem.getDefenseOffItem(inv.getLeggings());
+        finalDefense += AegisItem.getDefenseOffItem(inv.getBoots());
+        if (ArmorSet.GODS.hasFullSetEquipped(inv))
+            finalDefense += 50;
+        return finalDefense;
     }
 
     public static User getUser(Player player)

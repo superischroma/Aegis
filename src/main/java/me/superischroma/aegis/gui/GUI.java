@@ -1,6 +1,7 @@
 package me.superischroma.aegis.gui;
 
 import lombok.Getter;
+import me.superischroma.aegis.Aegis;
 import me.superischroma.aegis.util.AUtil;
 import org.bukkit.Bukkit;
 import org.bukkit.entity.Player;
@@ -13,6 +14,8 @@ import java.util.List;
 
 public abstract class GUI
 {
+    protected static Aegis plugin = Aegis.getPlugin();
+
     // name of the gui
     @Getter
     private String name;

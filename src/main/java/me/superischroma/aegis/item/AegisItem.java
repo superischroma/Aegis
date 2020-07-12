@@ -13,6 +13,7 @@ import org.bukkit.attribute.Attribute;
 import org.bukkit.attribute.AttributeModifier;
 import org.bukkit.enchantments.Enchantment;
 import org.bukkit.event.player.PlayerInteractEvent;
+import org.bukkit.inventory.EquipmentSlot;
 import org.bukkit.inventory.ItemFlag;
 import org.bukkit.inventory.ItemStack;
 import org.bukkit.inventory.meta.ItemMeta;
@@ -20,6 +21,7 @@ import org.bukkit.inventory.meta.ItemMeta;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
+import java.util.UUID;
 
 public class AegisItem
 {
@@ -73,8 +75,10 @@ public class AegisItem
         this.rawName = name;
         this.enchantable = false;
         this.setName(rarity.getColor() + name);
+        this.meta.setUnbreakable(true);
         this.meta.addItemFlags(ItemFlag.HIDE_ATTRIBUTES);
         this.meta.addItemFlags(ItemFlag.HIDE_ENCHANTS);
+        this.meta.addItemFlags(ItemFlag.HIDE_UNBREAKABLE);
         lore.add(rarity.getName());
         lore.add(mark);
         this.applyMetaToStack();
@@ -101,14 +105,19 @@ public class AegisItem
         stack.setItemMeta(meta);
     }
 
-    public void addAttribute(Attribute attr, double amount, AttributeModifier.Operation operation)
+    public void addAttribute(Attribute attr, double amount, AttributeModifier.Operation operation, EquipmentSlot slot)
     {
-        meta.addAttributeModifier(attr, new AttributeModifier(AUtil.getStringAttribute(attr), amount, operation));
+        meta.addAttributeModifier(attr, new AttributeModifier(UUID.randomUUID(), AUtil.getStringAttribute(attr), amount, operation, slot));
     }
 
-    public void addAttribute(Attribute attr, double amount)
+    public void addAttribute(Attribute attr, double amount, AttributeModifier.Operation operation)
     {
-        addAttribute(attr, amount, AttributeModifier.Operation.ADD_NUMBER);
+        addAttribute(attr, amount, operation, null);
+    }
+
+    public void addAttribute(Attribute attr, double amount, EquipmentSlot slot)
+    {
+        addAttribute(attr, amount, AttributeModifier.Operation.ADD_NUMBER, slot);
     }
 
     public void enchantable()

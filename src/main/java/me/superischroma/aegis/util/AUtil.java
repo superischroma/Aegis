@@ -1,5 +1,6 @@
 package me.superischroma.aegis.util;
 
+import me.superischroma.aegis.enchantment.AegisEnchantment;
 import me.superischroma.aegis.item.ItemType;
 import me.superischroma.aegis.item.variant.Variant;
 import org.bukkit.Bukkit;
@@ -376,6 +377,7 @@ public class AUtil
             case "thorns": return "Thorns";
             case "unbreaking": return "Unbreaking";
             case "vanishing_curse": return "Curse of Vanishing";
+            case "full_force": return "Full Force";
             default: return "Invalid Enchant";
         }
     }
@@ -421,6 +423,7 @@ public class AUtil
             case "Thorns": return Enchantment.THORNS;
             case "Unbreaking": return Enchantment.DURABILITY;
             case "Curse of Vanishing": return Enchantment.VANISHING_CURSE;
+            case "Full Force": return AegisEnchantment.FULL_FORCE.newInstance();
             default: return null;
         }
     }

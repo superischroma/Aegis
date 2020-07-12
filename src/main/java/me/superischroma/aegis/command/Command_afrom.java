@@ -1,6 +1,7 @@
 package me.superischroma.aegis.command;
 
 import me.superischroma.aegis.item.AegisInstanceItem;
+import me.superischroma.aegis.item.variant.Variant;
 import me.superischroma.aegis.rank.Rank;
 import me.superischroma.aegis.user.User;
 import me.superischroma.aegis.util.AUtil;
@@ -21,7 +22,9 @@ public class Command_afrom extends AegisCommand
         if (aii == null)
             throw new Exception("Couldn't get an item instance!");
         send("Item details: ");
-        send(" - Variant: " + aii.getVariant().getName());
+        Variant variant = aii.getVariant();
+        if (variant != null)
+            send(" - Variant: " + variant.getName());
         send(" - Enchantments: ");
         for (CompactEnchantment enchantment : aii.getEnchantments())
         {

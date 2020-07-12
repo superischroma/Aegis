@@ -5,6 +5,7 @@ import org.bukkit.Material;
 import org.bukkit.attribute.Attribute;
 import org.bukkit.attribute.AttributeModifier;
 import org.bukkit.enchantments.Enchantment;
+import org.bukkit.inventory.EquipmentSlot;
 import org.bukkit.inventory.ItemFlag;
 import org.bukkit.inventory.ItemStack;
 import org.bukkit.inventory.meta.Damageable;
@@ -12,6 +13,7 @@ import org.bukkit.inventory.meta.ItemMeta;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.UUID;
 
 public class ModifyableItemStack extends ItemStack
 {
@@ -33,11 +35,20 @@ public class ModifyableItemStack extends ItemStack
         meta.addItemFlags(ItemFlag.HIDE_ENCHANTS);
     }
 
+    public void addAttribute(Attribute attr, double amount, AttributeModifier.Operation operation, EquipmentSlot slot)
+    {
+        meta.addAttributeModifier(attr, new AttributeModifier(UUID.randomUUID(), AUtil.getStringAttribute(attr), amount, operation, slot));
+        meta.addItemFlags(ItemFlag.HIDE_ATTRIBUTES);
+    }
+
     public void addAttribute(Attribute attr, double amount, AttributeModifier.Operation operation)
     {
-        meta.addAttributeModifier(attr, new AttributeModifier(AUtil.getStringAttribute(attr), amount, operation));
-        meta.addItemFlags(ItemFlag.HIDE_ATTRIBUTES);
-        meta.addItemFlags(ItemFlag.HIDE_ENCHANTS);
+        addAttribute(attr, amount, operation, null);
+    }
+
+    public void addAttribute(Attribute attr, double amount, EquipmentSlot slot)
+    {
+        addAttribute(attr, amount, AttributeModifier.Operation.ADD_NUMBER, slot);
     }
 
     public void addAttribute(Attribute attr, double amount)

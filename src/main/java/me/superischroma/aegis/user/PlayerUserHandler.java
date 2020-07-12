@@ -1,9 +1,14 @@
 package me.superischroma.aegis.user;
 
+import me.superischroma.aegis.item.AegisItem;
+import me.superischroma.aegis.item.Weapon;
 import me.superischroma.aegis.service.AegisService;
+import me.superischroma.aegis.util.ALog;
 import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
+import org.bukkit.event.entity.EntityDamageByEntityEvent;
 import org.bukkit.event.entity.EntityDamageEvent;
+import org.bukkit.inventory.PlayerInventory;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -39,6 +44,32 @@ public class PlayerUserHandler extends AegisService
     {
         HEALTH.remove(player);
         HEALTH.put(player, health);
+    }
+
+    @EventHandler
+    public void onPlayerDamageEntity(EntityDamageByEntityEvent e)
+    {
+        if (!(e.getDamager() instanceof Player))
+            return;
+        ALog.info("br");
+        Player player = (Player) e.getDamager();
+        PlayerInventory inv = player.getInventory();
+        AegisItem used = null;
+        AegisItem mheld = AegisItem.from(inv.getItemInMainHand());
+        ALog.info(mheld);
+        AegisItem oheld = AegisItem.from(inv.getItemInOffHand());
+        ALog.info(oheld);
+        if (mheld != null)
+            used = mheld;
+        if (oheld != null)
+            used = oheld;
+        if (used == null)
+            return;
+        if (!(used instanceof Weapon))
+            return;
+        Weapon weapon = (Weapon) used;
+        ALog.info(weapon.getName());
+        e.setDamage((5 + weapon.getDamage() + (weapon.getStrength() / 5.0)) * (1 + (weapon.getStrength() / 100.0)));
     }
 
     @EventHandler

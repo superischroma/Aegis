@@ -3,7 +3,7 @@ package me.superischroma.aegis.mob;
 public enum AegisMobType
 {
     FUSE(Fuse.class),
-    SLENDERMAN(Slenderman.class),
+    SLENDERMAN(Zealot.class),
     TARANTULA(Tarantula.class),
     TEST(Test.class);
 

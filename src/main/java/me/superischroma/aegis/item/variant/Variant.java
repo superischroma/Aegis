@@ -4,6 +4,7 @@ import lombok.Getter;
 import me.superischroma.aegis.util.CompactAttribute;
 import org.bukkit.attribute.Attribute;
 import org.bukkit.attribute.AttributeModifier;
+import org.bukkit.inventory.EquipmentSlot;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -22,9 +23,14 @@ public class Variant
         this.attributes = new ArrayList<>();
     }
 
-    public void addAttribute(Attribute attr, double amount, AttributeModifier.Operation operation)
+    public void addAttribute(Attribute attr, double amount, AttributeModifier.Operation operation, EquipmentSlot slot)
     {
-        attributes.add(new CompactAttribute(attr, amount, operation));
+        attributes.add(new CompactAttribute(attr, amount, operation, slot));
+    }
+
+    public void addAttribute(Attribute attr, double amount, EquipmentSlot slot)
+    {
+        attributes.add(new CompactAttribute(attr, amount, slot));
     }
 
     public void addAttribute(Attribute attr, double amount)

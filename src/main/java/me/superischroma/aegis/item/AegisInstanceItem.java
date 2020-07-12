@@ -6,7 +6,10 @@ import me.superischroma.aegis.item.variant.Variant;
 import me.superischroma.aegis.util.*;
 import org.apache.commons.lang.StringUtils;
 import org.bukkit.ChatColor;
+import org.bukkit.attribute.Attribute;
+import org.bukkit.attribute.AttributeModifier;
 import org.bukkit.enchantments.Enchantment;
+import org.bukkit.inventory.EquipmentSlot;
 import org.bukkit.inventory.ItemStack;
 
 import java.util.ArrayList;
@@ -56,7 +59,41 @@ public class AegisInstanceItem
         if (variant != null)
         {
             for (CompactAttribute attribute : variant.getAttributes())
-                stack.addAttribute(attribute.getAttribute(), attribute.getAmount(), attribute.getOperation());
+            {
+                Attribute attr = attribute.getAttribute();
+                double amount = attribute.getAmount();
+                AttributeModifier.Operation operation = attribute.getOperation();
+                EquipmentSlot slot = attribute.getSlot();
+                if (slot == null)
+                {
+                    switch (item.getType())
+                    {
+                        case MELEE:
+                        case TOOLS:
+                        case RANGED:
+                        {
+                            stack.addAttribute(attr, amount, operation, EquipmentSlot.HAND);
+                            stack.addAttribute(attr, amount, operation, EquipmentSlot.OFF_HAND);
+                            break;
+                        }
+                        case ARMOR:
+                        {
+                            stack.addAttribute(attr, amount, operation, EquipmentSlot.HEAD);
+                            stack.addAttribute(attr, amount, operation, EquipmentSlot.CHEST);
+                            stack.addAttribute(attr, amount, operation, EquipmentSlot.LEGS);
+                            stack.addAttribute(attr, amount, operation, EquipmentSlot.FEET);
+                            break;
+                        }
+                        case NONE:
+                        {
+                            stack.addAttribute(attr, amount, operation, null);
+                            break;
+                        }
+                    }
+                }
+                else
+                    stack.addAttribute(attr, amount, operation, slot);
+            }
             stack.setName(item.getRarity().getColor() + variant.getName() + " " + stack.getName());
         }
         else

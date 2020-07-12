@@ -1,5 +1,7 @@
 package me.superischroma.aegis.service;
 
+import me.superischroma.aegis.enchantment.AegisEnchantment;
+import me.superischroma.aegis.item.AegisInstanceItem;
 import me.superischroma.aegis.item.AegisItem;
 import me.superischroma.aegis.item.AegisItemType;
 import me.superischroma.aegis.util.ALog;
@@ -61,7 +63,11 @@ public class FuseBowListener extends AegisService
 
         if (AegisItem.isValid(bow, AegisItemType.FUSE_BOW))
         {
-            arrows.put((Arrow) proj, (e.getForce() * 10.0f) / 2.0f);
+            float force = (e.getForce() * 10.0f) / 2.0f;
+            AegisInstanceItem aii = AegisInstanceItem.from(bow);
+            if (aii.alreadyHasEnchantment(AegisEnchantment.FULL_FORCE.newInstance()))
+                force = 5.0f;
+            arrows.put((Arrow) proj, force);
         }
     }
 

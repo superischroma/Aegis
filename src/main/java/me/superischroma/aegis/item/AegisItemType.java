@@ -6,7 +6,6 @@ public enum AegisItemType
     BUTTERFLY_BOOTS(ButterflyBoots.class),
     CONDENSED_FUSE_SOUL(CondensedFuseSoul.class),
     CRUSHER(Crusher.class),
-    VERY_DEFENSIVE_CHESTPLATE(VeryDefensiveChestplate.class),
     ENCHANTER(Enchanter.class),
     FUSE_BOW(FuseBow.class),
     FUSE_SOUL(FuseSoul.class),
@@ -22,6 +21,8 @@ public enum AegisItemType
     GODS_CHESTPLATE(GodsChestplate.class),
     GODS_LEGGINGS(GodsLeggings.class),
     GODS_BOOTS(GodsBoots.class),
+    VERY_DEFENSIVE_CHESTPLATE(VeryDefensiveChestplate.class),
+    VERY_POWERFUL_SWORD(VeryPowerfulSword.class),
     TEST(Test.class);
 
     private final Class<? extends AegisItem> clazz;

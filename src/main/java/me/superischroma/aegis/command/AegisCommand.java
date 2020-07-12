@@ -239,6 +239,7 @@ public abstract class AegisCommand implements CommandExecutor, TabCompleter
         }
         catch (Exception ex)
         {
+            ex.printStackTrace();
             fail(ChatColor.RED + ex.getMessage());
         }
         return true;
@@ -270,6 +271,20 @@ public abstract class AegisCommand implements CommandExecutor, TabCompleter
     protected Player getPlayer(String name)
     {
         return Bukkit.getPlayer(name);
+    }
+
+    protected int parseInt(String s) throws Exception
+    {
+        int i;
+        try
+        {
+            i = Integer.parseInt(s);
+        }
+        catch (NumberFormatException ex)
+        {
+            throw new Exception("Invalid number.");
+        }
+        return i;
     }
 
     protected Player getNonNullPlayer(String name)

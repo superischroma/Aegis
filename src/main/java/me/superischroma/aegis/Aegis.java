@@ -3,6 +3,7 @@ package me.superischroma.aegis;
 import me.superischroma.aegis.command.*;
 import me.superischroma.aegis.config.Config;
 import me.superischroma.aegis.config.ConfigEntry;
+import me.superischroma.aegis.enchantment.AegisEnchantmentHandler;
 import me.superischroma.aegis.gui.GUIHandler;
 import me.superischroma.aegis.item.AegisItemHandler;
 import me.superischroma.aegis.item.CustomCrafting;
@@ -54,6 +55,7 @@ public final class Aegis extends JavaPlugin
     public LevelingListener ll;
     public ActionBarManager abm;
     public PlayerUserHandler puh;
+    public AegisEnchantmentHandler aeh;
 
     @Override
     public void onEnable()
@@ -74,13 +76,14 @@ public final class Aegis extends JavaPlugin
     @Override
     public void onDisable()
     {
+        String shutdown = ConfigEntry.SHUTDOWN.tl();
         plugin = null;
         info = null;
         config.save();
         players.save();
         for (AegisService service : ash.getServices())
             service.stop();
-        ALog.info(ConfigEntry.SHUTDOWN.tl());
+        ALog.info(shutdown);
     }
 
     private void loadCommands()
@@ -120,6 +123,7 @@ public final class Aegis extends JavaPlugin
         ll = new LevelingListener();
         abm = new ActionBarManager();
         puh = new PlayerUserHandler();
+        aeh = new AegisEnchantmentHandler();
         ALog.info("Started " + ash.getServiceAmount() + " service(s).");
     }
 }

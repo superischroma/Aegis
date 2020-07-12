@@ -3,11 +3,11 @@ package me.superischroma.aegis.item;
 import org.bukkit.ChatColor;
 import org.bukkit.Material;
 
-public class FuseBow extends AegisItem
+public class FuseBow extends Weapon
 {
     public FuseBow()
     {
-        super("Fuse Bow", Material.BOW, Rarity.LEGENDARY, ItemType.RANGED);
+        super("Fuse Bow", Material.BOW, Rarity.LEGENDARY, false, 250.0, 100);
         super.setEnchantmentColor(ChatColor.YELLOW);
         super.enchantable();
         Recipe recipe = new Recipe(" DC", "D C", " DC");

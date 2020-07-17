@@ -3,7 +3,7 @@ package me.superischroma.aegis.mob;
 public enum AegisMobType
 {
     FUSE(Fuse.class),
-    SLENDERMAN(Zealot.class),
+    ZEALOT(Zealot.class),
     TARANTULA(Tarantula.class),
     TEST(Test.class);
 
@@ -17,6 +17,20 @@ public enum AegisMobType
     public Class<? extends AegisMob> getMobClass()
     {
         return clazz;
+    }
+
+    public AegisMob newInstance()
+    {
+        AegisMob mob;
+        try
+        {
+            mob = clazz.newInstance();
+        }
+        catch (IllegalAccessException | InstantiationException ex)
+        {
+            return null;
+        }
+        return mob;
     }
 
     public static AegisMobType findType(String s)

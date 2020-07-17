@@ -11,7 +11,7 @@ import java.util.List;
 public class Command_acoins extends AegisCommand
 {
     @Override
-    public void run(CommandUser sender, User user, String[] args) throws Exception
+    public void run(CommandUser sender, User user, String[] args)
     {
         switch (args[0].toLowerCase())
         {
@@ -19,30 +19,30 @@ public class Command_acoins extends AegisCommand
             {
                 User player = getUser(args[1]);
                 long additive;
-                try { additive = Long.parseLong(args[2]); } catch (NumberFormatException ex) { throw new Exception("Invalid number."); }
+                try { additive = Long.parseLong(args[2]); } catch (NumberFormatException ex) { throw new CommandFailException("invalidNumber"); }
                 player.setCoins(player.getCoins() + additive);
                 player.save();
-                send("You have added " + AUtil.getCommaSpacedLong(additive) + " coin(s) to " + player.getName() + "'s current amount.");
+                sendf("addedCoins", AUtil.getCommaSpacedLong(additive), player.getName());
                 return;
             }
             case "sub":
             {
                 User player = getUser(args[1]);
                 long s;
-                try { s = Long.parseLong(args[2]); } catch (NumberFormatException ex) { throw new Exception("Invalid number."); }
+                try { s = Long.parseLong(args[2]); } catch (NumberFormatException ex) { throw new CommandFailException("invalidNumber"); }
                 player.setCoins(player.getCoins() - s);
                 player.save();
-                send("You have subtracted " + AUtil.getCommaSpacedLong(s) + " coin(s) from " + player.getName() + "'s current amount.");
+                sendf("subtractedCoins", AUtil.getCommaSpacedLong(s), player.getName());
                 return;
             }
             case "set":
             {
                 User player = getUser(args[1]);
                 long set;
-                try { set = Long.parseLong(args[2]); } catch (NumberFormatException ex) { throw new Exception("Invalid number."); }
+                try { set = Long.parseLong(args[2]); } catch (NumberFormatException ex) { throw new CommandFailException("invalidNumber"); }
                 player.setCoins(set);
                 player.save();
-                send("You have set " + player.getName() + "'s amount to " + AUtil.getCommaSpacedLong(set) + " coin(s).");
+                sendf("setCoins", AUtil.getCommaSpacedLong(set), player.getName());
                 return;
             }
         }

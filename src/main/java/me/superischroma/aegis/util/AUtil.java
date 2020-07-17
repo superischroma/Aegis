@@ -1,5 +1,6 @@
 package me.superischroma.aegis.util;
 
+import me.superischroma.aegis.Aegis;
 import me.superischroma.aegis.enchantment.AegisEnchantment;
 import me.superischroma.aegis.item.ItemType;
 import me.superischroma.aegis.item.variant.Variant;
@@ -20,10 +21,31 @@ import java.util.regex.Pattern;
 
 public class AUtil
 {
+    private static Aegis plugin = Aegis.getPlugin();
     private static ItemStack blank = createNamedStack(Material.BLACK_STAINED_GLASS_PANE, ChatColor.DARK_GRAY + "");
     private static SimpleDateFormat DAY_FORMAT = new SimpleDateFormat("MM/dd/yy");
     private static SimpleDateFormat TIME_FORMAT = new SimpleDateFormat("hh:mm aa");
     private static NumberFormat COMMA_FORMAT = NumberFormat.getInstance();
+    private static Random RANDOM = new Random();
+
+    private static List<ChatColor> CHAT_COLOR_POOL = Arrays.asList(
+            ChatColor.BLACK,
+            ChatColor.DARK_BLUE,
+            ChatColor.DARK_GREEN,
+            ChatColor.DARK_AQUA,
+            ChatColor.DARK_RED,
+            ChatColor.DARK_PURPLE,
+            ChatColor.GOLD,
+            ChatColor.GRAY,
+            ChatColor.DARK_GRAY,
+            ChatColor.BLUE,
+            ChatColor.GREEN,
+            ChatColor.AQUA,
+            ChatColor.RED,
+            ChatColor.LIGHT_PURPLE,
+            ChatColor.YELLOW,
+            ChatColor.WHITE
+    );
 
     static
     {
@@ -473,5 +495,59 @@ public class AUtil
     {
         stack.setAmount(amount);
         return stack;
+    }
+
+    public static double getRandomDouble(double min, double max)
+    {
+        return min + (RANDOM.nextDouble() * (max - min));
+    }
+
+    public static ChatColor getRandomChatColor()
+    {
+        return CHAT_COLOR_POOL.get(RANDOM.nextInt(CHAT_COLOR_POOL.size() - 1));
+    }
+
+    public static ChatColor getReadableRandomChatColor()
+    {
+        ChatColor color = getRandomChatColor();
+        while (color == ChatColor.BLACK ||
+            color == ChatColor.DARK_BLUE ||
+            color == ChatColor.WHITE ||
+            color == ChatColor.DARK_GRAY)
+        {
+            color = getRandomChatColor();
+        }
+        return color;
+    }
+
+    public static String f(String s, Object... objects)
+    {
+        String g = plugin.messages.getString(s);
+        if (g == null)
+            return null;
+
+        for (Object object : objects)
+        {
+            g = g.replaceFirst("<v>", "" + object + getBaseColor());
+        }
+        g = g.replaceAll("<b>", "" + getBaseColor());
+        g = g.replaceAll("<e>", "" + getErrorColor());
+        return g;
+    }
+
+    public static ChatColor getBaseColor()
+    {
+        String c = plugin.messages.getString("baseColor");
+        if (c == null)
+            return ChatColor.GRAY;
+        return ChatColor.valueOf(c.toUpperCase());
+    }
+
+    public static ChatColor getErrorColor()
+    {
+        String c = plugin.messages.getString("errorColor");
+        if (c == null)
+            return ChatColor.RED;
+        return ChatColor.valueOf(c.toUpperCase());
     }
 }

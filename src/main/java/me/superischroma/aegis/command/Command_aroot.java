@@ -7,7 +7,7 @@ import org.bukkit.entity.Player;
 public class Command_aroot extends AegisCommand
 {
     @Override
-    public void run(CommandUser sender, User user, String[] args) throws Exception
+    public void run(CommandUser sender, User user, String[] args)
     {
         checkArgs(args.length != 2);
         User pl = getUser(args[1]);
@@ -16,23 +16,23 @@ public class Command_aroot extends AegisCommand
             case "add":
             {
                 if (pl.isRoot())
-                    throw new Exception("That user is already root!");
+                    throw new CommandFailException("alreadyRoot");
                 pl.setRoot(true);
                 pl.save();
-                send(pl.getName() + " is now root.");
-                send("You are now root.", pl);
+                sendf("nowRootConfirm", pl.getName());
+                sendf("nowRoot", pl);
                 return;
             }
             case "remove":
             {
                 if (!pl.isRoot())
-                    throw new Exception("That user is not root!");
+                    throw new CommandFailException("notRoot");
                 pl.setRoot(false);
                 pl.save();
-                send(pl.getName() + " is no longer root.");
+                sendf("noLongerRootConfirm", pl.getName());
                 Player player = getPlayer(args[1]);
                 if (player != null)
-                    send("You are no longer root.", player);
+                    sendf("noLongerRoot", player);
                 return;
             }
         }

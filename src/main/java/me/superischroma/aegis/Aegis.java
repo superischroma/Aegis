@@ -36,6 +36,7 @@ public final class Aegis extends JavaPlugin
     public Config config;
     public Config players;
     public Config blocks;
+    public Config messages;
 
     public CommandHandler ch;
     public AegisServiceHandler ash;
@@ -56,6 +57,7 @@ public final class Aegis extends JavaPlugin
     public ActionBarManager abm;
     public PlayerUserHandler puh;
     public AegisEnchantmentHandler aeh;
+    public ImpactHandler ih;
 
     @Override
     public void onEnable()
@@ -65,6 +67,7 @@ public final class Aegis extends JavaPlugin
         config = new Config("config.yml");
         players = new Config("players.yml");
         blocks = new Config("blocks.yml");
+        messages = new Config("messages.yml");
         ch = new CommandHandler();
         ash = new AegisServiceHandler();
         atl = new ATranslator();
@@ -81,6 +84,8 @@ public final class Aegis extends JavaPlugin
         info = null;
         config.save();
         players.save();
+        blocks.save();
+        messages.save();
         for (AegisService service : ash.getServices())
             service.stop();
         ALog.info(shutdown);
@@ -124,6 +129,7 @@ public final class Aegis extends JavaPlugin
         abm = new ActionBarManager();
         puh = new PlayerUserHandler();
         aeh = new AegisEnchantmentHandler();
+        ih = new ImpactHandler();
         ALog.info("Started " + ash.getServiceAmount() + " service(s).");
     }
 }

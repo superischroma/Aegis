@@ -16,21 +16,21 @@ public class Command_statusbar extends AegisCommand
             {
                 user.setStatusBar(true);
                 user.save();
-                send("Enabled status bar.");
+                sendf("statusBarEnabled");
                 return;
             }
             case "off":
             {
                 user.setStatusBar(false);
                 user.save();
-                send("Disabled status bar.");
+                sendf("statusBarDisabled");
                 return;
             }
         }
         User player = getUser(args[0]);
         player.setStatusBar(!player.hasStatusBarEnabled());
         player.save();
-        send((player.hasStatusBarEnabled() ? "Enabled" : "Disabled") + " " + player.getName() + "'s status bar.");
-        send(user.getName() + " has " + (player.hasStatusBarEnabled() ? "enabled" : "disabled") + " your status bar.");
+        sendf(player.hasStatusBarEnabled() ? "statusBarEnabledOtherConfirm" : "statusBarDisabledOtherConfirm", player.getName());
+        sendf(player.hasStatusBarEnabled() ? "statusBarEnabledOther" : "statusBarDisabledOther", player, user.getName());
     }
 }

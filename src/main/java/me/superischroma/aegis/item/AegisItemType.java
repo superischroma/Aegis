@@ -12,7 +12,9 @@ public enum AegisItemType
     HUB_BLOCK(HubBlock.class),
     HUB_MENU(HubMenu.class),
     KABOOM(Kaboom.class),
+    MAGICAL_SADDLE(MagicalSaddle.class),
     MERGER(Merger.class),
+    NUKE(Nuke.class),
     REINFORCER(Reinforcer.class),
     REINFORCER_STONE(ReinforcerStone.class),
     STRONG_FEATHER(StrongFeather.class),
@@ -21,9 +23,12 @@ public enum AegisItemType
     GODS_CHESTPLATE(GodsChestplate.class),
     GODS_LEGGINGS(GodsLeggings.class),
     GODS_BOOTS(GodsBoots.class),
+    TEST(Test.class),
+    TNT_DISPENSER(TNTDispenser.class),
+    TRASH_CAN(TrashCan.class),
     VERY_DEFENSIVE_CHESTPLATE(VeryDefensiveChestplate.class),
     VERY_POWERFUL_SWORD(VeryPowerfulSword.class),
-    TEST(Test.class);
+    WATER_BALLOON(WaterBalloon.class);
 
     private final Class<? extends AegisItem> clazz;
 

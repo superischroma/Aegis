@@ -12,9 +12,11 @@ public class Command_asaveconfig extends AegisCommand
         plugin.config.load();
         plugin.players.load();
         plugin.blocks.load();
+        plugin.messages.load();
         plugin.config.save();
         plugin.players.save();
         plugin.blocks.save();
-        send("Saved current configuration states.");
+        plugin.messages.save();
+        sendf("savedConfigurations");
     }
 }

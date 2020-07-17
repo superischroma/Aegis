@@ -105,25 +105,25 @@ public abstract class AegisCommand implements CommandExecutor, TabCompleter
 
                 if (!plugin.rm.getRank(cmd.sender).isAtLeast(params.rank()))
                 {
-                    fail("Only players will a rank of " + params.rank().getName() + " or higher can execute this command!");
+                    sendf("rankIsNotAtLeast", ChatColor.RED, params.rank().getName());
                     return true;
                 }
 
                 if (params.root() && !cmd.sender.getUser().isRoot())
                 {
-                    fail(NO_PERMISSION);
+                    sendf("noPermission", ChatColor.RED);
                     return true;
                 }
 
                 if (params.source() == CommandSource.IN_GAME && sender instanceof ConsoleCommandSender)
                 {
-                    fail(ONLY_IN_GAME);
+                    sendf("onlyInGame", ChatColor.RED);
                     return true;
                 }
 
                 if (params.source() == CommandSource.CONSOLE && sender instanceof Player)
                 {
-                    fail(ONLY_CONSOLE);
+                    sendf("onlyConsole", ChatColor.RED);
                     return true;
                 }
                 return cmd.onCommand(sender, this, c, args);
@@ -144,22 +144,27 @@ public abstract class AegisCommand implements CommandExecutor, TabCompleter
 
     protected void send(String s, CommandUser sender)
     {
-        sender.getBase().sendMessage(ChatColor.GRAY + s);
+        sender.getBase().sendMessage(AUtil.getBaseColor() + s);
     }
 
     protected void send(String s, CommandSender sender)
     {
-        sender.sendMessage(ChatColor.GRAY + s);
+        sender.sendMessage(AUtil.getBaseColor() + s);
     }
 
     protected void send(String s, Player player)
     {
-        player.sendMessage(ChatColor.GRAY + s);
+        player.sendMessage(AUtil.getBaseColor() + s);
     }
 
     protected void send(String s, User user)
     {
-        user.sendMessage(ChatColor.GRAY + s);
+        user.sendMessage(AUtil.getBaseColor() + s);
+    }
+
+    protected void send(String s, ChatColor color)
+    {
+        send(color + s);
     }
 
     protected void send(String s)
@@ -167,14 +172,34 @@ public abstract class AegisCommand implements CommandExecutor, TabCompleter
         send(s, sender);
     }
 
-    protected void fail(String s, boolean subtle)
+    protected void sendf(String s, Object... objects)
     {
-        sender.sendMessage((subtle ? ChatColor.GRAY : ChatColor.RED) + s);
+        send(AUtil.f(s, objects));
     }
 
-    protected void fail(String s)
+    protected void sendf(String s, CommandUser sender, Object... objects)
     {
-        fail(s, false);
+        send(AUtil.f(s, objects), sender);
+    }
+
+    protected void sendf(String s, CommandSender sender, Object... objects)
+    {
+        send(AUtil.f(s, objects), sender);
+    }
+
+    protected void sendf(String s, Player player, Object... objects)
+    {
+        send(AUtil.f(s, objects), player);
+    }
+
+    protected void sendf(String s, User user, Object... objects)
+    {
+        send(AUtil.f(s, objects), user);
+    }
+
+    protected void sendf(String s, ChatColor color, Object... objects)
+    {
+        send(AUtil.f(s, objects), color);
     }
 
     protected void blast(String s)
@@ -198,11 +223,11 @@ public abstract class AegisCommand implements CommandExecutor, TabCompleter
         }
     }
 
-    protected void checkRank(Rank rank) throws Exception
+    protected void checkRank(Rank rank)
     {
         if (!plugin.rm.getRank(sender).isAtLeast(rank))
         {
-            throw new Exception("Only players will a rank of " + rank.getName() + " or higher can execute this command!");
+            throw new CommandFailException("rankIsNotAtLeast", rank.getName());
         }
     }
 
@@ -230,17 +255,17 @@ public abstract class AegisCommand implements CommandExecutor, TabCompleter
         }
         catch (CommandArgumentException ex)
         {
-            fail(ChatColor.WHITE + cmd.getUsage().replace("<command>", cmd.getLabel()));
+            send(cmd.getUsage().replace("<command>", cmd.getLabel()), ChatColor.WHITE);
             return true;
         }
         catch (PlayerNotFoundException ex)
         {
-            fail(ChatColor.RED + "Player not found.", true);
+            send(AUtil.getErrorColor() + AUtil.f("playerNotFound"));
         }
-        catch (Exception ex)
+        catch (CommandFailException ex)
         {
             ex.printStackTrace();
-            fail(ChatColor.RED + ex.getMessage());
+            send(AUtil.getErrorColor() + ex.getMessage());
         }
         return true;
     }
@@ -255,7 +280,7 @@ public abstract class AegisCommand implements CommandExecutor, TabCompleter
         return StringUtil.copyPartialMatches(args[args.length - 1], options, new ArrayList<>());
     }
 
-    public abstract void run(CommandUser sender, User user, String[] args) throws Exception;
+    public abstract void run(CommandUser sender, User user, String[] args);
 
     protected List<String> getTabCompleteOptions(CommandUser sender, String[] args)
     {
@@ -273,7 +298,7 @@ public abstract class AegisCommand implements CommandExecutor, TabCompleter
         return Bukkit.getPlayer(name);
     }
 
-    protected int parseInt(String s) throws Exception
+    protected int parseInt(String s)
     {
         int i;
         try
@@ -282,7 +307,7 @@ public abstract class AegisCommand implements CommandExecutor, TabCompleter
         }
         catch (NumberFormatException ex)
         {
-            throw new Exception("Invalid number.");
+            throw new CommandFailException("invalidNumber");
         }
         return i;
     }

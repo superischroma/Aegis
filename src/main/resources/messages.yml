@@ -1,0 +1,54 @@
+#
+# Aegis - Messages
+#
+
+#
+# <v> - Variable
+# <r> - Reset color (to base color)
+# <e> - Error color
+#
+
+baseColor: GRAY
+errorColor: RED
+
+playerNotFound: Player not found.
+addedCoins: You have added <v> coin(s) to <v>'s current amount.
+subtractedCoins: You have subtracted <v> coin(s) from <v>'s current amount.
+setCoins: You have set <v>'s amount to <v> coin(s).
+itemInHandNeeded: Get an item in your hand!
+itemInstanceNotFound: Couldn't get an item instance!
+invalidEnchantment: Invalid enchantment.
+bookCreationError: Something went wrong while creating this book!
+noSpaceInventory: No space in inventory.
+bookGiven: Gave you a book with <v> <v>.
+invalidType: Invalid type.
+itemGiven: Gave a(n) <v>.
+killedAllMobs: Killed all Aegis mobs.
+entitySpawned: Spawned a(n) <v>.
+alreadyRoot: That user is already root!
+nowRoot: You are now root.
+nowRootConfirm: <v> is now root.
+notRoot: That user is not root!
+noLongerRoot: You are no longer root.
+noLongerRootConfirm: <v> is no longer root.
+savedConfigurations: Saved current configuration states.
+healed: Healed <v>.
+healedYourself: Healed yourself.
+identifyRank: You are a(n) <v><v>
+invalidRank: Invalid rank.
+unableRankGod: You cannot set someone to be God!
+setRank: Your rank is now <v>
+setRankConfirm: Set <v>'s rank to <v>
+realTimeEnabled: Real time enabled.
+realTimeDisabled: Real time disabled.
+statusBarEnabled: Status bar enabled.
+statusBarDisabled: Status bar disabled.
+statusBarEnabledOther: <v> has enabled your status bar.
+statusBarDisabledOther: <v> has disabled your status bar.
+statusBarEnabledOtherConfirm: Enabled <v>'s status bar.
+statusBarDisabledOtherConfirm: Disabled <v>'s status bar.
+invalidNumber: Invalid number.
+rankIsNotAtLeast: Only players with a rank of <v><e> or higher can execute this command!
+noPermission: No permission.
+onlyInGame: Console senders are not allowed to execute this command!
+onlyConsole: Only console senders are allowed to execute this command!

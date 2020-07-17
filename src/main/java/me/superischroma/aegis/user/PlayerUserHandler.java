@@ -1,14 +1,21 @@
 package me.superischroma.aegis.user;
 
 import me.superischroma.aegis.item.AegisItem;
+import me.superischroma.aegis.item.Armor;
 import me.superischroma.aegis.item.Weapon;
+import me.superischroma.aegis.mob.AegisSpawnedMob;
 import me.superischroma.aegis.service.AegisService;
-import me.superischroma.aegis.util.ALog;
+import me.superischroma.aegis.util.AUtil;
+import org.bukkit.ChatColor;
+import org.bukkit.entity.ArmorStand;
+import org.bukkit.entity.Entity;
+import org.bukkit.entity.EntityType;
 import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.entity.EntityDamageByEntityEvent;
 import org.bukkit.event.entity.EntityDamageEvent;
 import org.bukkit.inventory.PlayerInventory;
+import org.bukkit.scheduler.BukkitRunnable;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -51,14 +58,12 @@ public class PlayerUserHandler extends AegisService
     {
         if (!(e.getDamager() instanceof Player))
             return;
-        ALog.info("br");
         Player player = (Player) e.getDamager();
+        Entity entity = e.getEntity();
         PlayerInventory inv = player.getInventory();
         AegisItem used = null;
         AegisItem mheld = AegisItem.from(inv.getItemInMainHand());
-        ALog.info(mheld);
         AegisItem oheld = AegisItem.from(inv.getItemInOffHand());
-        ALog.info(oheld);
         if (mheld != null)
             used = mheld;
         if (oheld != null)
@@ -68,8 +73,28 @@ public class PlayerUserHandler extends AegisService
         if (!(used instanceof Weapon))
             return;
         Weapon weapon = (Weapon) used;
-        ALog.info(weapon.getName());
-        e.setDamage((5 + weapon.getDamage() + (weapon.getStrength() / 5.0)) * (1 + (weapon.getStrength() / 100.0)));
+        double damage = (5 + weapon.getDamage() + (weapon.getStrength() / 5.0)) * (1 + (weapon.getStrength() / 100.0));
+        e.setDamage(damage);
+        ArmorStand stand = (ArmorStand) entity.getWorld().spawnEntity(
+                entity.getLocation().clone().add(
+                        AUtil.getRandomDouble(-1.0, 1.0),
+                        AUtil.getRandomDouble(1.0, 2.0),
+                        AUtil.getRandomDouble(-1.0, 1.0)),
+                EntityType.ARMOR_STAND);
+        stand.setAI(false);
+        stand.setInvulnerable(true);
+        stand.setVisible(false);
+        stand.setGravity(false);
+        stand.setCustomName(AUtil.getReadableRandomChatColor() + "☆" + ((int) damage) + "☆");
+        stand.setCustomNameVisible(true);
+        new BukkitRunnable()
+        {
+            @Override
+            public void run()
+            {
+                stand.remove();
+            }
+        }.runTaskLater(plugin, 30);
     }
 
     @EventHandler
@@ -80,6 +105,18 @@ public class PlayerUserHandler extends AegisService
         User user = User.getUser((Player) e.getEntity());
         Player player = user.getPlayer();
         double damage = e.getDamage();
+        if (e instanceof EntityDamageByEntityEvent)
+        {
+            EntityDamageByEntityEvent ee = (EntityDamageByEntityEvent) e;
+            if (!(ee.getDamager() instanceof Player))
+            {
+                AegisSpawnedMob mob = plugin.amm.getAegisMob(ee.getDamager());
+                if (mob == null)
+                    return;
+                user = User.getUser((Player) ee.getEntity());
+                damage = mob.getBase().getStrength();
+            }
+        }
         player.setAbsorptionAmount(Double.MAX_VALUE);
         e.setDamage(0.0001);
         if (hasHealth(player))

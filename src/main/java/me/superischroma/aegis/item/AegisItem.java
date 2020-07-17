@@ -2,8 +2,8 @@ package me.superischroma.aegis.item;
 
 import lombok.Getter;
 import lombok.Setter;
+import me.superischroma.aegis.Aegis;
 import me.superischroma.aegis.gui.GUI;
-import me.superischroma.aegis.item.variant.Variant;
 import me.superischroma.aegis.item.variant.VariantType;
 import me.superischroma.aegis.util.AUtil;
 import org.apache.commons.lang.StringUtils;
@@ -12,6 +12,7 @@ import org.bukkit.Material;
 import org.bukkit.attribute.Attribute;
 import org.bukkit.attribute.AttributeModifier;
 import org.bukkit.enchantments.Enchantment;
+import org.bukkit.event.player.PlayerInteractEntityEvent;
 import org.bukkit.event.player.PlayerInteractEvent;
 import org.bukkit.inventory.EquipmentSlot;
 import org.bukkit.inventory.ItemFlag;
@@ -27,6 +28,8 @@ public class AegisItem
 {
     private static String mark = ChatColor.DARK_GRAY + "aegis";
 
+    protected static Aegis plugin = Aegis.getPlugin();
+
     // the actual stack that is used in the game
     @Getter
     private ItemStack stack;
@@ -35,6 +38,7 @@ public class AegisItem
     protected ItemMeta meta;
 
     // the stack's lore
+    @Getter
     private List<String> lore;
 
     // raw name
@@ -179,6 +183,7 @@ public class AegisItem
 
     public void onBlockInteract(PlayerInteractEvent e) {}
     public void onItemInteract(PlayerInteractEvent e) {}
+    public void onPlayerInteractEntity(PlayerInteractEntityEvent e) {}
 
     public static boolean isValid(ItemStack stack, AegisItemType type)
     {

@@ -1,6 +1,5 @@
 package me.superischroma.aegis.item;
 
-import me.superischroma.aegis.gui.EnchanterGUI;
 import me.superischroma.aegis.service.AegisService;
 import me.superischroma.aegis.util.AUtil;
 import org.bukkit.GameMode;
@@ -10,6 +9,7 @@ import org.bukkit.block.Block;
 import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.block.*;
+import org.bukkit.event.player.PlayerInteractEntityEvent;
 import org.bukkit.event.player.PlayerInteractEvent;
 import org.bukkit.inventory.ItemStack;
 
@@ -75,6 +75,22 @@ public class AegisItemHandler extends AegisService
                 e.setCancelled(true);
                 handleBlockDestruction(e, key, locations, true);
                 return;
+            }
+        }
+    }
+
+    @EventHandler
+    public void onEntityInteract(PlayerInteractEntityEvent e)
+    {
+        for (AegisItemType type : AegisItemType.values())
+        {
+            if (AegisItem.isValid(e.getPlayer().getInventory().getItemInMainHand(), type) ||
+                    AegisItem.isValid(e.getPlayer().getInventory().getItemInOffHand(), type))
+            {
+                AegisItem item = type.newInstance();
+                if (item == null)
+                    continue;
+                item.onPlayerInteractEntity(e);
             }
         }
     }

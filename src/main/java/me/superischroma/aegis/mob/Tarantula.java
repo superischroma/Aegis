@@ -7,6 +7,6 @@ public class Tarantula extends AegisMob
 {
     public Tarantula()
     {
-        super(ChatColor.RED + "Tarantula", EntityType.SPIDER, 2000.0);
+        super(ChatColor.RED + "Tarantula", EntityType.SPIDER, 2000.0, 500);
     }
 }

@@ -27,16 +27,20 @@ public class AegisMob
     private double maxHealth;
 
     @Getter
+    private int strength;
+
+    @Getter
     private RandomCollection<ItemStack> drops;
 
     @Getter
     private List<PotionEffect> potionEffects;
 
-    protected AegisMob(String name, EntityType type, double maxHealth)
+    protected AegisMob(String name, EntityType type, double maxHealth, int strength)
     {
         this.name = name;
         this.type = type;
         this.maxHealth = maxHealth;
+        this.strength = strength;
         this.drops = new RandomCollection<>();
         this.potionEffects = new ArrayList<>();
     }

@@ -12,13 +12,13 @@ import java.util.List;
 public class Command_rank extends AegisCommand
 {
     @Override
-    public void run(CommandUser sender, User user, String[] args) throws Exception
+    public void run(CommandUser sender, User user, String[] args)
     {
         checkArgs(args.length == 1 || args.length == 2 || args.length > 3);
         if (args.length == 0)
         {
             Rank rank = plugin.rm.getRank(sender);
-            send("You are: " + rank.getColor() + rank.getName());
+            sendf("identifyRank", rank.getColor(), rank.getName());
             return;
         }
         if (args[0].equalsIgnoreCase("set"))
@@ -27,13 +27,13 @@ public class Command_rank extends AegisCommand
             User player = getUser(args[1]);
             Rank rank = Rank.findRank(args[2]);
             if (rank == null)
-                throw new Exception("Invalid rank.");
+                throw new CommandFailException("invalidRank");
             if (rank == Rank.GOD)
-                throw new Exception("You cannot set someone to be God!");
+                throw new CommandFailException("unableRankGod");
             player.setRank(rank);
             player.save();
-            send("Set " + player.getName() + "'s rank to " + rank.getName());
-            send("Your rank is now " + rank.getName(), player);
+            sendf("setRankConfirm", player.getName(), rank.getName());
+            sendf("setRank", player, rank.getName());
         }
     }
 

@@ -1,25 +1,25 @@
 package me.superischroma.aegis.command;
 
+import me.superischroma.aegis.mob.nms.NMSEntity;
+import me.superischroma.aegis.mob.nms.NMSEntityType;
 import me.superischroma.aegis.user.User;
-import me.superischroma.aegis.mob.AegisMob;
-import me.superischroma.aegis.mob.AegisMobType;
 
 import java.util.ArrayList;
 import java.util.List;
 
-@CommandParameters(description = "Spawn a mob from Aegis.", usage = "/<command> <mob>", source = CommandSource.IN_GAME)
-public class Command_aspawnmob extends AegisCommand
+@CommandParameters(description = "Spawn an NMS entity from Aegis.", usage = "/<command> <entity>", source = CommandSource.IN_GAME)
+public class Command_anmsentity extends AegisCommand
 {
     @Override
     public void run(CommandUser sender, User user, String[] args)
     {
         checkArgs(args.length != 1);
-        AegisMobType type = AegisMobType.findType(args[0]);
+        NMSEntityType type = NMSEntityType.findType(args[0]);
         if (type == null)
             throw new CommandFailException("invalidType");
-        AegisMob mob = type.newInstance();
-        mob.spawn(sender.getPlayer().getLocation());
-        sendf("entitySpawned", mob.getName());
+        NMSEntity entity = type.newInstance();
+        entity.spawn(sender.getPlayer().getLocation());
+        sendf("entitySpawned", type.name());
     }
 
     @Override
@@ -28,7 +28,7 @@ public class Command_aspawnmob extends AegisCommand
         if (args.length == 1)
         {
             List<String> list = new ArrayList<>();
-            for (AegisMobType type : AegisMobType.values())
+            for (NMSEntityType type : NMSEntityType.values())
             {
                 list.add(type.name());
             }

@@ -6,6 +6,6 @@ public class Test extends AegisMob
 {
     public Test()
     {
-        super("Test", EntityType.ZOMBIE, 5.0);
+        super("Test", EntityType.ZOMBIE, 5.0, 0);
     }
 }

@@ -21,7 +21,7 @@ public class Command_realtime extends AegisCommand
                 World world = Bukkit.getWorld(ConfigEntry.REAL_TIME_WORLD.getString());
                 world.setGameRule(GameRule.DO_DAYLIGHT_CYCLE, false);
                 ConfigEntry.REAL_TIME_ENABLED.set(true);
-                send("Real time enabled.");
+                sendf("realTimeEnabled");
                 return;
             }
             case "off":
@@ -30,7 +30,7 @@ public class Command_realtime extends AegisCommand
                 world.setGameRule(GameRule.DO_DAYLIGHT_CYCLE, true);
                 world.setTime(0);
                 ConfigEntry.REAL_TIME_ENABLED.set(false);
-                send("Real time disabled.");
+                sendf("realTimeDisabled");
                 return;
             }
         }

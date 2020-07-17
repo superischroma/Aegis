@@ -12,15 +12,15 @@ import org.bukkit.inventory.ItemStack;
 public class Command_afrom extends AegisCommand
 {
     @Override
-    public void run(CommandUser sender, User user, String[] args) throws Exception
+    public void run(CommandUser sender, User user, String[] args)
     {
         checkArgs(args.length != 0);
         ItemStack stack = sender.getPlayer().getInventory().getItemInMainHand();
         if (AUtil.isStackAir(stack))
-            throw new Exception("Get an item in your hand!");
+            throw new CommandFailException("itemInHandNeeded");
         AegisInstanceItem aii = AegisInstanceItem.from(stack);
         if (aii == null)
-            throw new Exception("Couldn't get an item instance!");
+            throw new CommandFailException("itemInstanceNotFound");
         send("Item details: ");
         Variant variant = aii.getVariant();
         if (variant != null)

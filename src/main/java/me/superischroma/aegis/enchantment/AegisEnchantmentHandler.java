@@ -23,9 +23,13 @@ public class AegisEnchantmentHandler extends AegisService
                 f.set(null, true);
                 Enchantment.registerEnchantment(e);
             }
+            catch (IllegalArgumentException ex)
+            {
+            }
             catch (Exception ex)
             {
                 ALog.warn("Something went wrong while registering enchantment: " + enchantment.name());
+                ex.printStackTrace();
             }
         }
     }

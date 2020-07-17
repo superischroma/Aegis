@@ -11,7 +11,7 @@ public class Fuse extends AegisMob
 {
     public Fuse()
     {
-        super("Fuse", EntityType.CREEPER, 100.0);
+        super("Fuse", EntityType.CREEPER, 100.0, 25);
         super.addDrop(new FuseSoul(), 100.0);
         super.addPotionEffect(new PotionEffect(PotionEffectType.SPEED, 99999999, 1));
     }

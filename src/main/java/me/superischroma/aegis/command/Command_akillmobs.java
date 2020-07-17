@@ -11,6 +11,6 @@ public class Command_akillmobs extends AegisCommand
     {
         checkArgs(args.length != 0);
         plugin.amm.killMobs();
-        send("Killed all Aegis mobs.");
+        sendf("killedAllMobs");
     }
 }

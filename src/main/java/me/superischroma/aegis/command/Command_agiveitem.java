@@ -13,18 +13,18 @@ import java.util.List;
 public class Command_agiveitem extends AegisCommand
 {
     @Override
-    public void run(CommandUser sender, User user, String[] args) throws Exception
+    public void run(CommandUser sender, User user, String[] args)
     {
         checkArgs(args.length != 1);
         AegisItemType type = AegisItemType.findType(args[0]);
         if (type == null)
-            throw new Exception("Invalid type.");
+            throw new CommandFailException("invalidType");
         PlayerInventory inv = sender.getPlayer().getInventory();
         if (inv.firstEmpty() > inv.getSize() - 1)
-            throw new Exception("No space in inventory.");
-        AegisItem item = type.getItemClass().newInstance();
+            throw new CommandFailException("noSpaceInventory");
+        AegisItem item = type.newInstance();
         inv.setItem(inv.firstEmpty(), item.getStack());
-        send("Gave a(n) " + item.getName() + ChatColor.GRAY + ".");
+        sendf("itemGiven", item.getName());
     }
 
     @Override

@@ -21,7 +21,7 @@ import java.util.List;
 public class Command_agetbook extends AegisCommand
 {
     @Override
-    public void run(CommandUser sender, User user, String[] args) throws Exception
+    public void run(CommandUser sender, User user, String[] args)
     {
         checkArgs(args.length < 1 || args.length > 2);
         int level = 1;
@@ -29,10 +29,10 @@ public class Command_agetbook extends AegisCommand
             level = parseInt(args[1]);
         AegisEnchantment enchantment = AegisEnchantment.findEnchantment(args[0]);
         if (enchantment == null)
-            throw new Exception("Invalid enchantment.");
+            throw new CommandFailException("invalidEnchantment");
         Enchantment e = enchantment.newInstance();
         if (e == null)
-            throw new Exception("Something went wrong while creating this book!");
+            throw new CommandFailException("bookCreationError");
         ItemStack stack = new ItemStack(Material.ENCHANTED_BOOK);
         EnchantmentStorageMeta meta = (EnchantmentStorageMeta) stack.getItemMeta();
         meta.setLore(Collections.singletonList(ChatColor.GRAY + AUtil.getStringEnchant(e) + " " + level));
@@ -40,9 +40,9 @@ public class Command_agetbook extends AegisCommand
         stack.setItemMeta(meta);
         PlayerInventory inv = sender.getPlayer().getInventory();
         if (inv.firstEmpty() > inv.getSize() - 1)
-            throw new Exception("No space in inventory.");
+            throw new CommandFailException("noSpaceInventory");
         inv.setItem(inv.firstEmpty(), stack);
-        send("Gave you a book with " + AUtil.getStringEnchant(e) + " " + level + ".");
+        sendf("bookGiven", AUtil.getStringEnchant(e), level);
     }
 
     @Override

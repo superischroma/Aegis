@@ -9,50 +9,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="2c3276ba-e84b-444c-8e1c-65c081239105" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/me/superischroma/aegis/command/Command_anmsentity.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/me/superischroma/aegis/gui/TrashCanGUI.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/me/superischroma/aegis/item/MagicalSaddle.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/me/superischroma/aegis/item/Nuke.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/me/superischroma/aegis/item/SkullBased.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/me/superischroma/aegis/item/TNTDispenser.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/me/superischroma/aegis/item/TrashCan.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/me/superischroma/aegis/item/WaterBalloon.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/me/superischroma/aegis/mob/nms/NMSEntity.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/me/superischroma/aegis/mob/nms/NMSEntityType.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/me/superischroma/aegis/mob/nms/RideableWither.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/me/superischroma/aegis/mob/nms/SpecialSlime.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/me/superischroma/aegis/service/ImpactHandler.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/messages.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_spigotmc_spigot_api_1_16_1_R0_1_SNAPSHOT.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_spigotmc_spigot_api_1_16_1_R0_1_SNAPSHOT.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/me/superischroma/aegis/Aegis.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/me/superischroma/aegis/Aegis.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/me/superischroma/aegis/command/AegisCommand.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/me/superischroma/aegis/command/AegisCommand.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/me/superischroma/aegis/command/CommandFailException.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/me/superischroma/aegis/command/CommandFailException.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/me/superischroma/aegis/command/Command_acoins.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/me/superischroma/aegis/command/Command_acoins.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/me/superischroma/aegis/command/Command_afrom.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/me/superischroma/aegis/command/Command_afrom.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/me/superischroma/aegis/command/Command_agetbook.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/me/superischroma/aegis/command/Command_agetbook.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/me/superischroma/aegis/command/Command_agiveitem.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/me/superischroma/aegis/command/Command_agiveitem.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/me/superischroma/aegis/command/Command_akillmobs.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/me/superischroma/aegis/command/Command_akillmobs.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/me/superischroma/aegis/command/Command_aroot.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/me/superischroma/aegis/command/Command_aroot.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/me/superischroma/aegis/command/Command_asaveconfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/me/superischroma/aegis/command/Command_asaveconfig.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/me/superischroma/aegis/command/Command_aspawnmob.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/me/superischroma/aegis/command/Command_aspawnmob.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/me/superischroma/aegis/command/Command_heal.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/me/superischroma/aegis/command/Command_heal.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/me/superischroma/aegis/command/Command_rank.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/me/superischroma/aegis/command/Command_rank.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/me/superischroma/aegis/command/Command_realtime.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/me/superischroma/aegis/command/Command_realtime.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/me/superischroma/aegis/command/Command_statusbar.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/me/superischroma/aegis/command/Command_statusbar.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/me/superischroma/aegis/enchantment/AegisEnchantmentHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/me/superischroma/aegis/enchantment/AegisEnchantmentHandler.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/me/superischroma/aegis/gui/AdminGUI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/me/superischroma/aegis/gui/AdminGUI.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/me/superischroma/aegis/item/AegisItem.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/me/superischroma/aegis/item/AegisItem.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/me/superischroma/aegis/item/AegisItemHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/me/superischroma/aegis/item/AegisItemHandler.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/me/superischroma/aegis/item/AegisItemType.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/me/superischroma/aegis/item/AegisItemType.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/me/superischroma/aegis/mob/AegisMob.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/me/superischroma/aegis/mob/AegisMob.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/me/superischroma/aegis/mob/AegisMobType.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/me/superischroma/aegis/mob/AegisMobType.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/me/superischroma/aegis/mob/Fuse.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/me/superischroma/aegis/mob/Fuse.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/me/superischroma/aegis/mob/Tarantula.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/me/superischroma/aegis/mob/Tarantula.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/me/superischroma/aegis/mob/Test.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/me/superischroma/aegis/mob/Test.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/me/superischroma/aegis/mob/Zealot.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/me/superischroma/aegis/mob/Zealot.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/me/superischroma/aegis/user/PlayerUserHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/me/superischroma/aegis/user/PlayerUserHandler.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/me/superischroma/aegis/util/AUtil.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/me/superischroma/aegis/util/AUtil.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/me/superischroma/aegis/mob/nms/NMSEntityType.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/me/superischroma/aegis/mob/nms/NMSEntityType.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
@@ -65,19 +23,24 @@
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/me/superischroma/aegis/command/AegisCommand.java">
+        <entry file="file://$PROJECT_DIR$/src/main/java/me/superischroma/aegis/mob/nms/SpecialSlime.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="291">
-              <caret line="194" column="19" selection-start-line="194" selection-start-column="19" selection-end-line="194" selection-end-column="19" />
+            <state relative-caret-position="442">
+              <caret line="30" column="32" lean-forward="true" selection-start-line="30" selection-start-column="32" selection-end-line="30" selection-end-column="32" />
               <folding>
-                <element signature="e#5781#5782#0" expanded="true" />
-                <element signature="e#5828#5829#0" expanded="true" />
-                <element signature="e#5939#5940#0" expanded="true" />
-                <element signature="e#5986#5987#0" expanded="true" />
-                <element signature="e#6895#6896#0" expanded="true" />
-                <element signature="e#6955#6956#0" expanded="true" />
-                <element signature="e#7001#7002#0" expanded="true" />
-                <element signature="e#7061#7062#0" expanded="true" />
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/me/superischroma/aegis/mob/nms/RideableWither.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="136">
+              <caret line="8" column="13" selection-start-line="8" selection-start-column="13" selection-end-line="8" selection-end-column="13" />
+              <folding>
+                <element signature="imports" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -86,8 +49,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/me/superischroma/aegis/command/Command_anmsentity.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="357">
-              <caret line="21" column="44" selection-start-line="21" selection-start-column="44" selection-end-line="21" selection-end-column="44" />
+            <state relative-caret-position="493">
+              <caret line="29" column="49" selection-start-line="29" selection-start-column="49" selection-end-line="29" selection-end-column="49" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -95,41 +58,11 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/me/superischroma/aegis/command/Command_aroot.java">
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/main/java/me/superischroma/aegis/mob/nms/NMSEntityType.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="561">
-              <caret line="34" column="50" lean-forward="true" selection-start-line="34" selection-start-column="50" selection-end-line="34" selection-end-column="50" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/me/superischroma/aegis/command/Command_aspawnmob.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="255">
-              <caret line="20" column="52" selection-start-line="20" selection-start-column="52" selection-end-line="20" selection-end-column="52" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/me/superischroma/aegis/util/AUtil.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="657">
-              <caret line="545" column="43" lean-forward="true" selection-start-line="545" selection-start-column="43" selection-end-line="545" selection-end-column="43" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/me/superischroma/aegis/command/Command_heal.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="306">
-              <caret line="19" column="80" lean-forward="true" selection-start-line="19" selection-start-column="80" selection-end-line="19" selection-end-column="80" />
+            <state relative-caret-position="102">
+              <caret line="6" column="42" selection-start-line="6" selection-start-column="42" selection-end-line="6" selection-end-column="42" />
             </state>
           </provider>
         </entry>
@@ -137,7 +70,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/me/superischroma/aegis/command/Command_rank.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="323">
+            <state relative-caret-position="476">
               <caret line="34" column="70" selection-start-line="34" selection-start-column="70" selection-end-line="34" selection-end-column="70" />
             </state>
           </provider>
@@ -147,16 +80,25 @@
         <entry file="file://$PROJECT_DIR$/src/main/java/me/superischroma/aegis/command/Command_realtime.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="459">
-              <caret line="32" column="42" lean-forward="true" selection-start-line="32" selection-start-column="42" selection-end-line="32" selection-end-column="42" />
+              <caret line="32" column="42" selection-start-line="32" selection-start-column="42" selection-end-line="32" selection-end-column="42" />
             </state>
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/me/superischroma/aegis/command/Command_statusbar.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="476">
-              <caret line="29" column="39" lean-forward="true" selection-start-line="29" selection-start-column="39" selection-end-line="29" selection-end-column="39" />
+              <caret line="29" column="39" selection-start-line="29" selection-start-column="39" selection-end-line="29" selection-end-column="39" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/me/superischroma/aegis/mob/nms/NMSEntity.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="119">
+              <caret line="7" column="1" selection-start-line="7" selection-start-column="1" selection-end-line="7" selection-end-column="1" />
             </state>
           </provider>
         </entry>
@@ -164,8 +106,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/resources/messages.yml">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="850">
-              <caret line="50" column="52" selection-start-line="50" selection-start-column="52" selection-end-line="50" selection-end-column="52" />
+            <state relative-caret-position="518">
+              <caret line="31" column="37" lean-forward="true" selection-start-line="31" selection-start-column="37" selection-end-line="31" selection-end-column="37" />
             </state>
           </provider>
         </entry>
@@ -207,7 +149,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/src/main/java/me/superischroma/aegis/item/SuperTNT.java" />
         <option value="$PROJECT_DIR$/src/main/java/me/superischroma/aegis/item/TNTDispense.java" />
         <option value="$PROJECT_DIR$/src/main/java/me/superischroma/aegis/item/HubMenu.java" />
         <option value="$PROJECT_DIR$/src/main/java/me/superischroma/aegis/item/MagicalSaddle.java" />
@@ -234,7 +175,6 @@
         <option value="$PROJECT_DIR$/src/main/java/me/superischroma/aegis/mob/Test.java" />
         <option value="$PROJECT_DIR$/src/main/java/me/superischroma/aegis/user/PlayerUserHandler.java" />
         <option value="$PROJECT_DIR$/src/main/java/me/superischroma/aegis/mob/nms/RideableDragon.java" />
-        <option value="$PROJECT_DIR$/src/main/java/me/superischroma/aegis/mob/nms/NMSEntityType.java" />
         <option value="$PROJECT_DIR$/src/main/java/me/superischroma/aegis/mob/nms/SpecialSlime.java" />
         <option value="$PROJECT_DIR$/src/main/java/me/superischroma/aegis/mob/nms/NMSEntity.java" />
         <option value="$PROJECT_DIR$/src/main/java/me/superischroma/aegis/mob/nms/RideableWither.java" />
@@ -258,6 +198,8 @@
         <option value="$PROJECT_DIR$/src/main/java/me/superischroma/aegis/command/Command_statusbar.java" />
         <option value="$PROJECT_DIR$/src/main/resources/messages.yml" />
         <option value="$PROJECT_DIR$/src/main/java/me/superischroma/aegis/util/AUtil.java" />
+        <option value="$PROJECT_DIR$/src/main/java/me/superischroma/aegis/mob/nms/AngryChicken.java" />
+        <option value="$PROJECT_DIR$/src/main/java/me/superischroma/aegis/mob/nms/NMSEntityType.java" />
       </list>
     </option>
   </component>
@@ -300,6 +242,8 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="PackagesPane" />
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -367,6 +311,16 @@
               <item name="main" type="462c0819:PsiDirectoryNode" />
               <item name="java" type="462c0819:PsiDirectoryNode" />
               <item name="aegis" type="462c0819:PsiDirectoryNode" />
+              <item name="mob" type="462c0819:PsiDirectoryNode" />
+              <item name="nms" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Aegis" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Aegis" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="aegis" type="462c0819:PsiDirectoryNode" />
               <item name="user" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
@@ -389,8 +343,6 @@
           <select />
         </subPane>
       </pane>
-      <pane id="PackagesPane" />
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -403,11 +355,11 @@
   </component>
   <component name="RecentsManager">
     <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="me.superischroma.aegis.mob.nms" />
       <recent name="me.superischroma.aegis.command" />
       <recent name="me.superischroma.aegis.gui" />
       <recent name="me.superischroma.aegis.item" />
       <recent name="me.superischroma.aegis.service" />
-      <recent name="me.superischroma.aegis.mob" />
     </key>
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\Users\Jax\Documents\GitHub\Aegis\src\main\java\me\superischroma\aegis\util" />
@@ -470,7 +422,7 @@
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.29424307" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.29744136" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Image Layers" order="2" />
       <window_info id="Designer" order="3" />
@@ -529,13 +481,6 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/main/java/me/superischroma/aegis/item/Crusher.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="68">
-          <caret line="5" column="13" selection-start-line="5" selection-start-column="13" selection-end-line="5" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/me/superischroma/aegis/gui/ReinforcerGUI.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-203">
@@ -668,16 +613,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/me/superischroma/aegis/mob/nms/SpecialSlime.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="374">
-          <caret line="22" selection-start-line="22" selection-end-line="22" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/me/superischroma/aegis/config/ConfigEntry.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="68">
@@ -730,37 +665,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/me/superischroma/aegis/mob/nms/NMSEntity.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="119">
-          <caret line="7" column="1" selection-start-line="7" selection-start-column="1" selection-end-line="7" selection-end-column="1" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/me/superischroma/aegis/mob/nms/NMSEntityType.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="119">
-          <caret line="7" column="19" selection-start-line="7" selection-start-column="19" selection-end-line="7" selection-end-column="19" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/me/superischroma/aegis/mob/nms/RideableWither.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="17">
-          <caret line="1" selection-start-line="1" selection-end-line="1" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/me/superischroma/aegis/config/AMessages.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="51">
-          <caret line="3" column="1" lean-forward="true" selection-start-line="3" selection-start-column="1" selection-end-line="3" selection-end-column="1" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/me/superischroma/aegis/config/AMessages.java" />
     <entry file="file://$PROJECT_DIR$/src/main/java/me/superischroma/aegis/Aegis.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="51">
@@ -852,6 +757,20 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/me/superischroma/aegis/command/AegisCommand.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2431">
+          <caret line="194" column="19" selection-start-line="194" selection-start-column="19" selection-end-line="194" selection-end-column="19" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/me/superischroma/aegis/command/Command_aroot.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="561">
+          <caret line="34" column="50" selection-start-line="34" selection-start-column="50" selection-end-line="34" selection-end-column="50" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/me/superischroma/aegis/command/Command_aspawnmob.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="255">
@@ -859,50 +778,26 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/me/superischroma/aegis/command/Command_heal.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/me/superischroma/aegis/util/AUtil.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="306">
-          <caret line="19" column="80" lean-forward="true" selection-start-line="19" selection-start-column="80" selection-end-line="19" selection-end-column="80" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/me/superischroma/aegis/command/AegisCommand.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="291">
-          <caret line="194" column="19" selection-start-line="194" selection-start-column="19" selection-end-line="194" selection-end-column="19" />
-          <folding>
-            <element signature="e#5781#5782#0" expanded="true" />
-            <element signature="e#5828#5829#0" expanded="true" />
-            <element signature="e#5939#5940#0" expanded="true" />
-            <element signature="e#5986#5987#0" expanded="true" />
-            <element signature="e#6895#6896#0" expanded="true" />
-            <element signature="e#6955#6956#0" expanded="true" />
-            <element signature="e#7001#7002#0" expanded="true" />
-            <element signature="e#7061#7062#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/me/superischroma/aegis/command/Command_anmsentity.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="357">
-          <caret line="21" column="44" selection-start-line="21" selection-start-column="44" selection-end-line="21" selection-end-column="44" />
+        <state relative-caret-position="9010">
+          <caret line="545" column="43" selection-start-line="545" selection-start-column="43" selection-end-line="545" selection-end-column="43" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/me/superischroma/aegis/command/Command_aroot.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/me/superischroma/aegis/command/Command_heal.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="561">
-          <caret line="34" column="50" lean-forward="true" selection-start-line="34" selection-start-column="50" selection-end-line="34" selection-end-column="50" />
+        <state relative-caret-position="306">
+          <caret line="19" column="80" selection-start-line="19" selection-start-column="80" selection-end-line="19" selection-end-column="80" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/me/superischroma/aegis/command/Command_rank.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="323">
+        <state relative-caret-position="476">
           <caret line="34" column="70" selection-start-line="34" selection-start-column="70" selection-end-line="34" selection-end-column="70" />
         </state>
       </provider>
@@ -910,14 +805,21 @@
     <entry file="file://$PROJECT_DIR$/src/main/java/me/superischroma/aegis/command/Command_realtime.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="459">
-          <caret line="32" column="42" lean-forward="true" selection-start-line="32" selection-start-column="42" selection-end-line="32" selection-end-column="42" />
+          <caret line="32" column="42" selection-start-line="32" selection-start-column="42" selection-end-line="32" selection-end-column="42" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/me/superischroma/aegis/util/AUtil.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/me/superischroma/aegis/command/Command_statusbar.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="657">
-          <caret line="545" column="43" lean-forward="true" selection-start-line="545" selection-start-column="43" selection-end-line="545" selection-end-column="43" />
+        <state relative-caret-position="476">
+          <caret line="29" column="39" selection-start-line="29" selection-start-column="39" selection-end-line="29" selection-end-column="39" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/me/superischroma/aegis/command/Command_anmsentity.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="493">
+          <caret line="29" column="49" selection-start-line="29" selection-start-column="49" selection-end-line="29" selection-end-column="49" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
@@ -926,15 +828,53 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/resources/messages.yml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="850">
-          <caret line="50" column="52" selection-start-line="50" selection-start-column="52" selection-end-line="50" selection-end-column="52" />
+        <state relative-caret-position="518">
+          <caret line="31" column="37" lean-forward="true" selection-start-line="31" selection-start-column="37" selection-end-line="31" selection-end-column="37" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/me/superischroma/aegis/command/Command_statusbar.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/me/superischroma/aegis/mob/nms/RideableWither.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="476">
-          <caret line="29" column="39" lean-forward="true" selection-start-line="29" selection-start-column="39" selection-end-line="29" selection-end-column="39" />
+        <state relative-caret-position="136">
+          <caret line="8" column="13" selection-start-line="8" selection-start-column="13" selection-end-line="8" selection-end-column="13" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/me/superischroma/aegis/mob/nms/AngryChicken.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="357">
+          <caret line="27" column="33" lean-forward="true" selection-start-line="27" selection-start-column="33" selection-end-line="27" selection-end-column="33" />
+          <folding>
+            <element signature="e#680#681#0" expanded="true" />
+            <element signature="e#708#709#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/me/superischroma/aegis/mob/nms/SpecialSlime.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="442">
+          <caret line="30" column="32" lean-forward="true" selection-start-line="30" selection-start-column="32" selection-end-line="30" selection-end-column="32" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/me/superischroma/aegis/mob/nms/NMSEntity.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="119">
+          <caret line="7" column="1" selection-start-line="7" selection-start-column="1" selection-end-line="7" selection-end-column="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/me/superischroma/aegis/mob/nms/NMSEntityType.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="102">
+          <caret line="6" column="42" selection-start-line="6" selection-start-column="42" selection-end-line="6" selection-end-column="42" />
         </state>
       </provider>
     </entry>

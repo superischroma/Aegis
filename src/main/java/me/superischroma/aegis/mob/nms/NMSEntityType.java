@@ -4,8 +4,8 @@ import net.minecraft.server.v1_16_R1.EntityInsentient;
 
 public enum NMSEntityType
 {
-    SPECIAL_SLIME(SpecialSlime.class),
-    RIDEABLE_WITHER(RideableWither.class);
+    RIDEABLE_WITHER(RideableWither.class),
+    SPECIAL_SLIME(SpecialSlime.class);
 
     private final Class<? extends EntityInsentient> clazz;
 

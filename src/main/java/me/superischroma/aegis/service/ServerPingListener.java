@@ -23,6 +23,11 @@ public class ServerPingListener extends AegisService
     @EventHandler
     public void onServerPing(ServerListPingEvent e)
     {
+        if (ConfigEntry.WHITELIST_ENABLED.getBoolean() && ConfigEntry.MOTD_WHITELIST.getBoolean())
+        {
+            e.setMotd(AUtil.colorize(ConfigEntry.WHITELIST_MESSAGE.getString()));
+            return;
+        }
         if (ConfigEntry.MOTD_RANDOMIZE.getBoolean())
         {
             List<String> list = ConfigEntry.MOTD_LIST.getStringList();

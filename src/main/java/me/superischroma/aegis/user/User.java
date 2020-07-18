@@ -3,6 +3,7 @@ package me.superischroma.aegis.user;
 import lombok.Getter;
 import lombok.Setter;
 import me.superischroma.aegis.Aegis;
+import me.superischroma.aegis.config.ConfigEntry;
 import me.superischroma.aegis.item.AegisItem;
 import me.superischroma.aegis.item.ArmorSet;
 import me.superischroma.aegis.leveling.AegisLevel;
@@ -32,7 +33,6 @@ public class User
     private boolean root;
 
     @Getter
-    @Setter
     private Rank rank;
 
     @Setter
@@ -164,6 +164,12 @@ public class User
         if (ArmorSet.GODS.hasFullSetEquipped(inv))
             finalDefense += 50;
         return finalDefense;
+    }
+
+    public void setRank(Rank rank)
+    {
+        this.rank = rank;
+        ConfigEntry.WHITELIST_LIST.removeFromStringList(name);
     }
 
     public static User getUser(Player player)

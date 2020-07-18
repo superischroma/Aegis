@@ -13,8 +13,13 @@ public enum ConfigEntry
     REAL_TIME_WORLD("real_time.world"),
     //
     MOTD("motd.message"),
+    MOTD_WHITELIST("motd.whitelist"),
     MOTD_RANDOMIZE("motd.randomize"),
-    MOTD_LIST("motd.messages");
+    MOTD_LIST("motd.messages"),
+    //
+    WHITELIST_ENABLED("whitelist.enabled"),
+    WHITELIST_LIST("whitelist.list"),
+    WHITELIST_MESSAGE("whitelist.message");
 
     private final String key;
 
@@ -59,5 +64,23 @@ public enum ConfigEntry
     {
         config.set(key, value);
         config.save();
+    }
+
+    public boolean addToStringList(String element)
+    {
+        List<String> list = getStringList();
+        boolean contains = !list.contains(element);
+        if (contains)
+            list.add(element);
+        set(list);
+        return contains;
+    }
+
+    public boolean removeFromStringList(String element)
+    {
+        List<String> list = getStringList();
+        boolean remove = list.remove(element);
+        set(list);
+        return remove;
     }
 }

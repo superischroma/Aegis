@@ -520,7 +520,7 @@ public class AUtil
         return color;
     }
 
-    public static String f(String s, Object... objects)
+    public static String f(String s, boolean error, Object... objects)
     {
         String g = plugin.messages.getString(s);
         if (g == null)
@@ -528,11 +528,19 @@ public class AUtil
 
         for (Object object : objects)
         {
-            g = g.replaceFirst("<v>", "" + object + getBaseColor());
+            ChatColor appendingColor = getBaseColor();
+            if (error)
+                appendingColor = getErrorColor();
+            g = g.replaceFirst("<v>", "" + object + appendingColor);
         }
         g = g.replaceAll("<b>", "" + getBaseColor());
         g = g.replaceAll("<e>", "" + getErrorColor());
         return g;
+    }
+
+    public static String f(String s, Object... objects)
+    {
+        return f(s, false, objects);
     }
 
     public static ChatColor getBaseColor()

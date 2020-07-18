@@ -16,5 +16,12 @@ motd:
   # Your generic MOTD
   message: '&c%plugin.name%'
   # Randomizer (chooses a random MOTD from the list below, overrides generic MOTD)
+  whitelist: true
   randomize: false
   messages: []
+
+# Whitelist
+whitelist:
+  enabled: false
+  list: []
+  message: '&cWhitelist is currently enabled.'

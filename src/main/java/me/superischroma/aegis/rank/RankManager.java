@@ -32,6 +32,14 @@ public class RankManager extends AegisService
         return sender.getUser().getRank();
     }
 
+    public Rank getRank(String name)
+    {
+        User user = User.getUser(name);
+        if (user == null)
+            return Rank.DEFAULT;
+        return user.getRank();
+    }
+
     public boolean isElevated(User user)
     {
         return getRank(user).isElevated();

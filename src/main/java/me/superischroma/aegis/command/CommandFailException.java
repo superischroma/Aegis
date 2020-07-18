@@ -6,6 +6,6 @@ public class CommandFailException extends RuntimeException
 {
     public CommandFailException(String message, Object... objects)
     {
-        super(AUtil.f(message, objects));
+        super(AUtil.getErrorColor() + AUtil.f(message, true, objects));
     }
 }

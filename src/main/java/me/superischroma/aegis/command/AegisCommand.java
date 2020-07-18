@@ -264,8 +264,7 @@ public abstract class AegisCommand implements CommandExecutor, TabCompleter
         }
         catch (CommandFailException ex)
         {
-            ex.printStackTrace();
-            send(AUtil.getErrorColor() + ex.getMessage());
+            send(ex.getMessage());
         }
         return true;
     }

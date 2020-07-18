@@ -58,6 +58,7 @@ public final class Aegis extends JavaPlugin
     public PlayerUserHandler puh;
     public AegisEnchantmentHandler aeh;
     public ImpactHandler ih;
+    public LoginProcess lp;
 
     @Override
     public void onEnable()
@@ -130,6 +131,7 @@ public final class Aegis extends JavaPlugin
         puh = new PlayerUserHandler();
         aeh = new AegisEnchantmentHandler();
         ih = new ImpactHandler();
+        lp = new LoginProcess();
         ALog.info("Started " + ash.getServiceAmount() + " service(s).");
     }
 }

@@ -52,3 +52,11 @@ rankIsNotAtLeast: Only players with a rank of <v><e> or higher can execute this 
 noPermission: No permission.
 onlyInGame: Console senders are not allowed to execute this command!
 onlyConsole: Only console senders are allowed to execute this command!
+whitelistEnabled: Whitelist has been enabled.
+whitelistDisabled: Whitelist has been disabled.
+whitelistCleared: Whitelist has been cleared.
+whitelistAdded: Added <v> to the whitelist.
+whitelistAlreadyAdded: <v> is already on the whitelist.
+whitelistRemoved: Removed <v> from the whitelist.
+whitelistNotAdded: <v> is not on the whitelist.
+whitelistNoRanked: <v> is ranked and does not need to be added to the whitelist.
